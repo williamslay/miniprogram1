@@ -1,14 +1,49 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/mine/mine",
+    "pages/post/post",
+    "pages/search/search"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarBackgroundColor": "#ffd662",
+    "navigationBarTitleText": "柚宠",
     "navigationBarTextStyle":"black"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#626567",
+    "selectedColor": "#2A8CE5",
+    "backgroundColor": "#ffF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "",
+        "iconPath": "images/Index.png",
+        "selectedIconPath": "images/IndexS.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "",
+        "iconPath": "images/Search.png",
+        "selectedIconPath": "images/SearchS.png"
+      },
+      {
+        "pagePath": "pages/post/post",
+        "text": "",
+        "iconPath": "images/Post.png",
+        "selectedIconPath": "images/PostS.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "",
+        "iconPath": "images/Mine.png",
+        "selectedIconPath": "images/MineS.png"
+      }
+    ]
+  }
 }

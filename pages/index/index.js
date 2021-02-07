@@ -1,54 +1,96 @@
-// index.js
-// 获取应用实例
-const app = getApp()
-
-Page({
-  data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
-  },
-  // 事件处理函数
-  bindViewTap() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
-  onLoad() {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  }
-})
+Component({   
+  properties: {        
+   background: {            
+       type: String,            
+       value: '#ffd662'        
+   },        
+   color: {            
+       type: String,            
+       value: 'rgba(0, 0, 0, 1)'        
+   },        
+   titleText: {            
+       type: String,            
+       value: ''        
+   },        
+   titleImg: {            
+       type: String,            
+       value: '../../images/YouPet.png'        
+   },        
+   backIcon: {            
+       type: String,            
+       value: ''        
+    },        
+   homeIcon: {            
+       type: String,            
+       value: ''        
+   },        
+   fontSize: {            
+       type: Number,            
+       value: 16        
+   },        
+   iconHeight: {            
+       type: Number,            
+       value: 32   
+   },        
+   iconWidth: {            
+       type:Number,            
+       value: 70        
+   }    
+  },    
+attached: function(){        
+  var that = this;        
+  that.setNavSize();        
+  that.setStyle();    
+},    
+data: {
+   },    
+methods: {        
+// 通过获取系统信息计算导航栏高度        
+setNavSize: function() {            
+var that = this                
+   , sysinfo = wx.getSystemInfoSync()                
+   , statusHeight = sysinfo.statusBarHeight                
+   , isiOS = sysinfo.system.indexOf('iOS') > -1                
+   , navHeight;            
+if (!isiOS) {                
+   navHeight = 48;            
+  } else {                
+   navHeight = 44;            
+}            
+that.setData({                
+   status: statusHeight,                
+   navHeight: navHeight            
+ })        
+},        
+setStyle: function() {            
+   var that  = this                
+   , containerStyle                
+   , textStyle                
+   , iconStyle;            
+   containerStyle = [                
+       'background:' + that.data.background                
+       ].join(';');            
+       textStyle = [                
+       'color:' + that.data.color,                
+       'font-size:' + that.data.fontSize + 'px'            
+       ].join(';');            
+       iconStyle = [                
+       'width: ' + that.data.iconWidth + 'px',                
+       'height: ' + that.data.iconHeight + 'px'            
+       ].join(';');            
+       that.setData({               
+            containerStyle: containerStyle,                
+            textStyle: textStyle,                
+            iconStyle: iconStyle            
+       })        },        
+       // 返回事件        
+back: function(){            
+   wx.navigateBack({                
+       delta: 1            
+   })            
+   this.triggerEvent('back', {back: 1})        
+},        
+home: function() {            
+   this.triggerEvent('home', {});       
+}   
+}})
