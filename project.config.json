@@ -40,14 +40,16 @@
     "minifyWXSS": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.0.4",
-  "appid": "wxbb017d85caa8f5d0",
+  "libVersion": "2.15.0",
+  "appid": "wx74c629af38ac39d4",
   "projectname": "miniprogram-1",
   "debugOptions": {
     "hidedInDevtools": []
   },
   "scripts": {},
   "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
   "condition": {
     "search": {
       "list": []
