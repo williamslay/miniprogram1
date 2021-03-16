@@ -1,84 +1,86 @@
+/* 验证登录页样式 */
 .header {
-    margin: 90rpx 0 90rpx 50rpx;
-    border-bottom: 1px solid #ccc;
-    text-align: center;
-    width: 650rpx;
-    height: 300rpx;
-    line-height: 450rpx;
+  margin: 90rpx 0 90rpx 50rpx;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  width: 650rpx;
+  height: 300rpx;
+  line-height: 450rpx;
 }
 
 .header image {
-    width: 200rpx;
-    height: 200rpx;
+  width: 200rpx;
+  height: 200rpx;
 }
 
 .content {
-    margin-left: 50rpx;
-    margin-bottom: 90rpx;
+  margin-left: 50rpx;
+  margin-bottom: 90rpx;
 }
 
 .content text {
-    display: block;
-    color: #9d9d9d;
-    margin-top: 40rpx;
+  display: block;
+  color: #9d9d9d;
+  margin-top: 40rpx;
 }
 
 .bottom {
-    border-radius: 80rpx;
-    margin: 70rpx 50rpx;
-    font-size: 35rpx;
+  border-radius: 80rpx;
+  margin: 70rpx 50rpx;
+  font-size: 35rpx;
 }
 
-.nav {
-width: 100%;
-position: fixed;
-top: 0;
-left: 0;
-z-index: 999;
+/* 功能栏样式 */
+.nav{
+    margin-top: 60rpx;
+    height: 400rpx;
+  }
+  .swiper{
+    height: 400rpx;
+  }
+  .nav .item{
+    width: 20%;
+    height: 150rpx;
+  }
+  .nav-item{
+    display: flex;
+    flex-wrap: wrap;
+    height: 300rpx;
+    text-align: center;
+    font-size: 28rpx;
+  
+  }
+  .nav .item image{
+    width: 135rpx;
+    height: 100rpx;
+  }
+/* 主页轮播图样式功能 */
+  swiper {
+    height: 421.5rpx;
+}
+swiper-item image {
+    width: 100%;
+    height: 100%;
 }
 
-.navbar {
-display: flex;
-align-items: center;
-position: relative;
+.select-title,.newest-title{
+    width: 100%;
+    padding:30rpx 0;
+    height: 40rpx;
+    color: #AB956D;
+    text-align: center;
 }
-
-.capsule {
-margin-left: 10px;
-height: 30px;
-background: #ffffff;
-border-radius: 16px;
-display: flex;
-align-items: center;
+.select-top-small{
+    width: 375rpx;
+    height: 375rpx;
+    float: left;
 }
-
-.capsule > view {
-width: 45px;
-height: 60%;
+.select-bottom,.select-top{
+    width: 100%;
+    height: 375rpx;
 }
-
-.capsule > view:nth-child(2) {
-border-left: 1px solid #ffffff;
-}
-
-.capsule image {
-display: block;
-width: 40px;
-height: 45px;
-margin: auto;
-}
-
-.nav-title {
-position: absolute;
-left: 104px;
-right: 104px;
-top: 50%;
-transform: translateY(-50%);
-max-height: 30px;
-text-align: center;
-font-size: 14px;
-font-weight: bold;
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
+.select-top-small image,.select-bottom image,.select-top-small navigator,.select-bottom navigator{
+    display: block;
+    width: 100%;
+    height: 100%;
 }

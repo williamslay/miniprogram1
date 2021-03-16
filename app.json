@@ -1,15 +1,15 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/mine/mine",
     "pages/post/post",
     "pages/search/search"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ffd662",
     "navigationBarTitleText": "柚宠",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
@@ -30,7 +30,7 @@
         "text": "",
         "iconPath": "images/Search.png",
         "selectedIconPath": "images/SearchS.png"
-      },
+      }, 
       {
         "pagePath": "pages/post/post",
         "text": "",

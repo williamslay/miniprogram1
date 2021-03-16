@@ -1,0 +1,29 @@
+:root{
+  --icon-size:80rpx;
+}
+.search{
+
+}
+.search-icon{
+  width:var(--icon-size);
+  height:var(--icon-size);
+  border-radius: 50%;
+}
+.search-bar{
+  width:100%;
+  bottom:100%;
+}
+.search-recommend{
+
+}
+.search-result{
+
+}
+
+.result-title{
+  
+}
+
+.result-list{
+
+}
