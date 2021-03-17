@@ -1,7 +1,8 @@
 {
   "usingComponents": {
-    "mp-navigation-bar": "../../miniprogram_npm/weui-miniprogram/navigation-bar/navigation-bar",
-    "Myheader":"../../components/header/header"
+    "mp-navigation-bar": "/miniprogram_npm/weui-miniprogram/navigation-bar/navigation-bar",
+    "Myheader":"/components/header/header",
+    "i-divider":"/miniprogram_npm/ivew-weapp/divider/index"
   },
   "navigationStyle": "custom"
 }

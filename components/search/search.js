@@ -5,8 +5,9 @@ Component({
       //页面模式或图标模式
       value: "icon"
       //icon, page
-    }
+    },
   },
+
   data: {
     history: [],
     result: [],
@@ -16,22 +17,31 @@ Component({
     showBar: false,
     showrecommend: false,
     showResult: false,
-    showNo: false
+    showNo: false,
   },
-  lifetimes: {
-    attached: function () {
-      if (mode == "icon") {
-        showIcon.setData(true);
-      } else if (mode == "page") {
-        showBar.setData(true);
-        showRecommand.setData(true);
+
+  observers: {
+    mode: function () {
+      if (term == "icon") {
+        this.setData({
+          showIcon:true,
+        });
+      } else if (term == "page") {
+        this.setData({
+          showBar:true,
+          showRecommend:true,
+        })
       }
-    }
+    },
   },
+
   methods: {
     expand: function () {
-      showBar = true; showIcon = false; showrecommend = true;
+      this.setData({
+        showBar : true, showIcon : false, showrecommend : true,
+      })
     },
+
     searchNow: function (e) {
       if (e.detail.value) {
         history.push(e.detail.value);
@@ -44,16 +54,24 @@ Component({
           method: "GET",
           dataType: "json",
           success: "listResult",
-        })
+        });
+        while(history.length>16)
+        history.pop();
       }
     },
+
     listResult: function (res) {
       if (res.data.length > 0) {
         result = res.data;
-        showResult.setData(true);
+        this.setData({
+          showRecommand:false,
+          showResult:true,
+        })
       } else {
-        showNo.setData(true);
+        this.setData({
+          showNo:true,
+        })
       }
     },
-  }
+  },
 })

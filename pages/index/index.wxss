@@ -1,86 +1,76 @@
 /* 验证登录页样式 */
-.header {
-  margin: 90rpx 0 90rpx 50rpx;
-  border-bottom: 1px solid #ccc;
-  text-align: center;
-  width: 650rpx;
-  height: 300rpx;
-  line-height: 450rpx;
+.login-box{
+  margin:0 0 80rpx 0;
+}
+.logo {
+    margin:0 0 40rpx 0;
+    padding: 80rpx 0 40rpx 0;
+    border-bottom: 2rpx solid #ccc;
+    text-align: center;
+  }
+.logo image {
+    width:50%;
+  }
+
+rich-text{
+  width:100%;
 }
 
-.header image {
-  width: 200rpx;
-  height: 200rpx;
-}
+.txt {
+    width:100%;
+    font-size:1rem;
+    line-height:1.4em;
+    text-align:justify;
+    margin:40rpx 40rpx;
+  }
+.txt .title{
+    font-size:2em;
+    text-align:center;
+    color: #444444;
+    margin: 0.5em 0 0.5em 0;
+  }
+.txt .normal {
+    color: #000000;
+  }
 
-.content {
-  margin-left: 50rpx;
-  margin-bottom: 90rpx;
-}
-
-.content text {
-  display: block;
-  color: #9d9d9d;
-  margin-top: 40rpx;
-}
-
-.bottom {
+.button {
+  margin:40rpx auto;
   border-radius: 80rpx;
-  margin: 70rpx 50rpx;
+  width:60%;
   font-size: 35rpx;
 }
 
 /* 功能栏样式 */
-.nav{
-    margin-top: 60rpx;
-    height: 400rpx;
+  .Menu {
+    margin-top: 30rpx; 
+    height: 300rpx;
   }
-  .swiper{
-    height: 400rpx;
-  }
-  .nav .item{
+  .Menu .item{
     width: 20%;
-    height: 150rpx;
+    height: 108rpx;
   }
-  .nav-item{
+  .Menu_item{
     display: flex;
     flex-wrap: wrap;
-    height: 300rpx;
+    height: 216rpx;
     text-align: center;
     font-size: 28rpx;
   
   }
-  .nav .item image{
-    width: 135rpx;
-    height: 100rpx;
+  .Menu .item image{
+    display:block;
+    width: 80rpx;
+    height: 80rpx;
+    margin:auto;
   }
 /* 主页轮播图样式功能 */
-  swiper {
+ .SwNews swiper {
     height: 421.5rpx;
+    overflow:hidden;
+    border-radius:10rpx;
+    transform: translateY(0)
 }
-swiper-item image {
-    width: 100%;
-    height: 100%;
-}
-
-.select-title,.newest-title{
-    width: 100%;
-    padding:30rpx 0;
-    height: 40rpx;
-    color: #AB956D;
-    text-align: center;
-}
-.select-top-small{
-    width: 375rpx;
-    height: 375rpx;
-    float: left;
-}
-.select-bottom,.select-top{
-    width: 100%;
-    height: 375rpx;
-}
-.select-top-small image,.select-bottom image,.select-top-small navigator,.select-bottom navigator{
-    display: block;
+  .SwNews swiper-item image {
     width: 100%;
     height: 100%;
 }

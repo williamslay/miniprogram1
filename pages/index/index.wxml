@@ -1,53 +1,44 @@
-<view wx:if="{{!isHide}}">
-	<view wx:if="{{canIUse}}">
-		<view class='header'>
-			<image src='/images/wx_login.png'></image>
-		</view>
-		<view class='content'>
-			<view>柚宠申请获取以下权限</view>
-			<text>获得你的公开信息(昵称，头像等)</text>
-		</view>
+<view wx:if="{{verChk}}" left="0rpx" right="0rpx" width="100vw" height="100vh" display="block">
+	<text class="title">请升级微信版本</text>
+</view>
 
-		<button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="_bindGetUserInfo">
-			授权登录
-		</button>
-	</view>
-	<view wx:else>请升级微信版本</view>
-</view>
-<view wx:else>
-	<Myheader avatarUrl="{{_avatarUrl}}" titleImg='../../images/YouPet.png'></Myheader>
-	<view class="nav">
-		<swiper indicator-dots="{{false}}" indicator-active-color="#ffd161" autoplay="{{false}}" class="swiper" >
-			<swiper-item class="nav-item">
-				<view wx:for="{{array}}" wx:key="index" class="item" bindtap="swiperitem">
-					<image src="/image/t{{(index%8)+1}}.png"></image>
-					<view>{{item}}</view>
-				</view>
+<!-- 导航栏 -->
+<Myheader avatarUrl="{{_avatarUrl}}" titleImg='../../images/YouPet.png'></Myheader>
+
+<!-- 菜单栏 -->
+<swiper indicator-dots="{{false}}" class="categories" class='Menu'>
+	<swiper-item class="Menu_item">
+		<view wx:for="{{cateName}}" class="item" bindtap="openCate(index)">
+			<image mode='widthFix' src="{{cateImg[index]}}"></image>
+			<text>{{item}}</text>
+		</view>
+	</swiper-item>
+</swiper>
+
+<!-- 轮播 -->
+	<swiper class='SwNews' indicator-dots="{{true}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}">
+		<block wx:for="{{SwimgUrls}}" wx:key="{{index}}">
+			<swiper-item>
+				<image  mode='widthFix' src="{{item}}" class="slide-image" width="100%" />
 			</swiper-item>
-		</swiper>
+		</block>
+	</swiper>
+
+<i-divider color="balck" line-color="#ffd662" size="18"height="40" >为您推荐</i-divider>
+
+<!-- 瀑布流 -->
+
+<!-- 登录弹窗 -->
+<page-container show="{{showLogin}}" round="{{true}}" bind:clickoverlay="refuseLogin">
+  <view class="login-box">
+	<view class="logo">
+		<image mode='widthFix' src='/images/logo.jpg'></image>
 	</view>
-	<view>
-		<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}">
-			<block wx:for="{{imgUrls}}" wx:key="{{index}}">
-				<swiper-item>
-					<image src="{{item}}" class="slide-image" width="100%" />
-				</swiper-item>
-			</block>
-		</swiper>
-	</view>
-	<swiper indicator-dots="{{false}}" class="categories">
-    <swiper-item class="swiper-item">
-      <view wx:for="{{cateName}}" class="item" bindtap="openCate(index)">
-        <image src="{{cateImg[index]}}"></image>
-        <text>{{item}}</text>
-      </view>
-    </swiper-item>
-  </swiper>
-  <view class="content" wx:if={{showContent}}>
-    <navigator url="{{item.url}}">
-      <view class="result-title">
-        <text>{{item.title}}</text>
-      </view>
-    </navigator>
-  </view>
+<view class="txt">
+  <text class="title">留下我的足迹</text>
 </view>
+	<button class="button" type="primary" open-type="getUserInfo" bindgetuserinfo="acceptLogin">
+		微信授权
+  </button>
+</view>
+</page-container>

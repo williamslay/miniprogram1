@@ -1,5 +1,10 @@
-/**app.wxss**/
-.container {
+@import"./miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss";
+
+page{
+--ThemeColor:#ffd662;
+}
+
+/* .container {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -12,8 +17,4 @@ page,view,text,swiper,swiper-item,image,navigator {
 padding:0;
 margin:0;
 box-sizing: border-box;
-}
-@import"./miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss";
-page{
---ThemeColor:#ffd662;
-}
+} */
