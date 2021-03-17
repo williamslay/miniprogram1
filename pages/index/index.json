@@ -4,7 +4,6 @@
     "Myheader":"/components/header/header",
     "i-divider":"/miniprogram_npm/ivew-weapp/divider/index",
     "waterfall": "/components/waterfall/index",
-    "test-view": "/components/test-view/index",
     "image-view": "/components/image-view/index"
   },
   "navigationStyle": "custom"

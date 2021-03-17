@@ -1,0 +1,3 @@
+<view class="container">
+  <waterfall generic:selectable="image-view" views="{{ images }}" options="{{ options }}" />
+</view>

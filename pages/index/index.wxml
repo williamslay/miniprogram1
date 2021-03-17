@@ -9,7 +9,7 @@
 <swiper indicator-dots="{{false}}" class="categories" class='Menu'>
 	<swiper-item class="Menu_item">
 		<view wx:for="{{cateName}}" class="item" bindtap="openCate(index)">
-			<image mode='widthFix' src="{{cateImg[index]}}"></image>
+			<image mode='aspectFit' src="{{cateImg[index]}}"></image>
 			<text>{{item}}</text>
 		</view>
 	</swiper-item>
@@ -18,26 +18,25 @@
 <!-- 轮播 -->
 
 <view class='SwNews'>
-	<swiper  indicator-dots="{{true}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}">
+	<swiper  indicator-dots="{{false}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}" bindchange="swiperChange">
 		<block wx:for="{{SwimgUrls}}" wx:key="{{index}}">
 			<swiper-item>
 				<image  mode='widthFix' src="{{item}}" class="slide-image" width="100%" />
 			</swiper-item>
 		</block>
 	</swiper>
-</view>
+  <view class="dots">
+    <block wx:for="{{SwimgUrls}}" wx:key="*">
+      <view class="dot{{index == current ? ' active' : ''}}"></view>
+    </block>
+   </view>  
+  </view>
+
 <i-divider color="balck" line-color="#ffd662" size="18"height="40" >为您推荐</i-divider>
 
 <!-- 瀑布流 -->
 <view class="container">
   <waterfall
-    wx:if="{{ _type === 0 }}"
-    generic:selectable="test-view"
-    views="{{ views }}"
-    options="{{ options }}"
-  />
-  <waterfall
-    wx:else
     generic:selectable="image-view"
     views="{{ images }}"
     options="{{ options }}"

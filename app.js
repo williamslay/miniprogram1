@@ -1,6 +1,6 @@
 App({
   globalData: {
-  // userInfo: null,
+  userInfo: null,
     baseURL: "https://alxga.goho.co/wp-json",
   }
 

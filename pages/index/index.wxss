@@ -77,16 +77,27 @@ rich-text{
   
 }
 
+.dots{
+  position: relative;
+  left:70%;
+  bottom: 40rpx;
+  display: flex;
+}
+.dots .dot{
+  margin: 0 5rpx;
+  width: 40rpx;
+  height: 14rpx;
+  background: #999;
+  border-radius: 8rpx;
+  transition: all .6s;
+}
+.dots .dot.active{
+  width: 40rpx;
+  background: #ffd662;
+}
+
+
 /* 瀑布流 */
 .container {
   padding: 10px;
-}
-
-.btns {
-  display: flex;
-  position: fixed;
-  justify-content: space-around;
-  bottom: env(safe-area-inset-bottom);
-  left: 0;
-  width: 100%;
 }

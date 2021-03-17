@@ -11,6 +11,7 @@ Page({
       '../../images/switch2.jpg',
       '../../images/switch3.jpg'
     ],//轮播图中图片
+    current:0,
 
     cateName: ['柚宠商城', '百科教程', '宠物健康', '宠物美容', '同城活动', '萌猫', '憨狗', '水族', '小型宠', '更多'],//显示名
     cateTerm: [],//后台名
@@ -58,6 +59,7 @@ Page({
         if (res.authSetting['scope.userInfo']) {
           wx.getUserInfo({
             success: function (res) {
+              app.globalData.userInfo = res.userInfo;
               // 用户已经授权过,不需要显示授权页面,所以不需要改变 isHide 的值
               that.setData({
                 showLogin: false,
@@ -85,7 +87,7 @@ Page({
           // 用户没有授权
           wx.hideTabBar();
           that.setData({
-            showLogin:true,
+            showLogin: true,
           });
         }
       }
@@ -100,16 +102,16 @@ Page({
       console.log(e.detail.userInfo);
       //授权成功后,通过改变 isHide 的值，让实现页面显示出来，把授权页面隐藏起来
       that.setData({
-        showLogin:false,
+        showLogin: false,
         _avatarUrl: e.detail.userInfo.avatarUrl
       });
       wx.showTabBar();
     } else {
       //用户按了拒绝按钮
-      that.refuseLogin;
+      refuseLogin();
     }
   },
-  refuseLogin:function(){
+  refuseLogin: function refuseLogin() {
     var that = this;
     wx.showModal({
       title: '警告',
@@ -121,12 +123,13 @@ Page({
         if (res.confirm) {
           console.log('用户点击了“返回授权”');
           that.setData({
-            showLogin:true,
+            showLogin: true,
           })
         }
       }
     });
-  },openCate: function (index) {
+  },
+  openCate: function (index) {
     wx: request({
       url: app.globalData.baseURL + "/wp/v2/posts",
       data: {
@@ -140,7 +143,13 @@ Page({
   refreshContent: function (data) {
 
   },
-onReady: function loadImage() {
+  swiperChange: function(e) {
+    var that = this;
+    that.setData({
+      current: e.detail.current,
+    })
+  },
+  onReady: function loadImage() {
     this.data._type = 1
     this.setData({ views: [], _type: 1 })
     this.getHuaBanList()

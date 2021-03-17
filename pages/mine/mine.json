@@ -1,3 +1,6 @@
 {
-  
+  "usingComponents": {
+    "i-card": "/miniprogram_npm/ivew-weapp/card/index"
+  },
+  "navigationBarTitleText": ""
 }

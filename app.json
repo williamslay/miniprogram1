@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/mine/mine",
     "pages/post/post",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/test/test"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -13,7 +14,6 @@
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
-  
   "tabBar": {
     "color": "#626567",
     "selectedColor": "#2A8CE5",
@@ -31,7 +31,7 @@
         "text": "",
         "iconPath": "images/Search.png",
         "selectedIconPath": "images/SearchS.png"
-      }, 
+      },
       {
         "pagePath": "pages/post/post",
         "text": "",
@@ -40,6 +40,12 @@
       },
       {
         "pagePath": "pages/mine/mine",
+        "text": "",
+        "iconPath": "images/Mine.png",
+        "selectedIconPath": "images/MineS.png"
+      },
+      {
+        "pagePath": "pages/test/test",
         "text": "",
         "iconPath": "images/Mine.png",
         "selectedIconPath": "images/MineS.png"
