@@ -1,0 +1,6 @@
+<view class="c-test-view">
+	<view class="waterfall-load-node">
+		{{value.width}}*{{value.height}}
+	</view>
+	<view class="waterfall-load-other">模拟加载图片</view>
+</view>

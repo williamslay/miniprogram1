@@ -1,0 +1,126 @@
+var _getWaterfall = function (dom) {
+  var waterfallDom = dom.selectComponent('.c-waterfall')
+  return {
+    dom: waterfallDom,
+    options: waterfallDom.getDataset().options,
+  }
+}
+
+var _getView = function (index, dom) {
+  var viewDom = dom.selectComponent('.c-waterfall >>> #view-' + index)
+  return {
+    dom: viewDom,
+    style: viewDom.getComputedStyle(['width', 'height']),
+  }
+}
+
+var _getLoadView = function (index, dom) {
+  return {
+    dom: dom.selectComponent(
+      '.c-waterfall >>> #view-' + index + '>>>.waterfall-load-node'
+    ),
+  }
+}
+
+var _getOtherView = function (index, dom) {
+  var other = dom.selectComponent(
+    '.c-waterfall >>> #view-' + index + '>>> .waterfall-load-other'
+  )
+  return {
+    dom: other,
+    style: other.getComputedStyle(['height', 'width']),
+  }
+}
+
+var load = function (node, oldNode, dom) {
+  if (!node.value) return false
+  var index = node.index
+
+  var waterfall = _getWaterfall(dom)
+  // 获取虚拟组件，通过index下标确认是哪个，获取宽度高度
+  var view = _getView(index, dom)
+  var otherView = _getOtherView(index, dom)
+  var otherViewHeight = fix(otherView.style.height)
+
+  // 计算虚拟组件的高度，其实就是计算图片在当前视图节点里的宽高比例
+  // image组件的mode="widthFix"也是这样计算的额
+  var virtualStyle = computedContainerHeight(node.value, view.style)
+
+  // span取值，此处计算的高度应该是整个虚拟节点视图的高度
+  // load事件回调里，我们只传了load视图节点的宽高
+  // 后续通过selectComponent获取到了other视图节点的高度
+  var span = computedSpan(
+    otherViewHeight + virtualStyle.height,
+    waterfall.options
+  )
+
+  // 设置虚拟组件的样式
+  view.dom.setStyle({
+    'grid-row': 'auto / span ' + span,
+  })
+
+  // 获取重新渲染后的虚拟组件高度
+  var viewHeight = view.dom.getComputedStyle(['width', 'height'])
+  viewHeight = fix(viewHeight.height)
+
+  // 上面说了因为浮点数的计算会导致有几个像素的误差
+  // 为了视图美观，我们将load视图节点的高度设置成虚拟视图节点的总高度减去静态节点的高度
+  var loadView = _getLoadView(index, dom)
+  loadView.dom.setStyle({
+    width: virtualStyle.width + 'px',
+    height: parseInt(viewHeight - otherViewHeight) + 'px',
+    opacity: 1,
+    visibility: 'visible',
+  })
+  return false
+}
+
+var computedContainerHeight = function (node, view) {
+  var vW = fix(view.width)
+  var nW = fix(node.width)
+  var nH = fix(node.height)
+  var scale = nW / vW
+  return {
+    width: vW,
+    height: nH / scale,
+  }
+}
+
+var computedSpan = function (height, options) {
+  // 公式 (gap + rows) * span - gap = height
+  // 已知高度求span (height + gap) / (gap + rows) = span
+  // options里的gap为数组，需要去下边距所以得gap[1]
+  var rows = options.rows
+  var gap = options.gap[1]
+  var span = Math.ceil((height + gap) / (gap + rows))
+  return span
+}
+
+var fix = function (string) {
+  if (typeof string === 'number') return string
+  return Number(string.replace('px', ''))
+}
+
+var _getGap = function (gaps) {
+  return gaps
+    .map(function (v) {
+      return v + 'px'
+    })
+    .join(' ')
+}
+
+var setStyle = function (options) {
+  if (!options) return
+  var style = [
+    '--grid-span: ' + options.span || 10,
+    '--grid-column: ' + options.column || 2,
+    '--grid-gap: ' + _getGap(options.gap || [10, 10]),
+    '--grid-rows: ' + (options.rows || 10) + 'px',
+  ]
+  return style.join(';')
+}
+
+module.exports = {
+  load: load,
+  setStyle: setStyle,
+}

@@ -1,0 +1,23 @@
+<wxs
+  src="./index.wxs"
+  module="wx"
+></wxs>
+
+<view
+  class="c-waterfall"
+  change:loadStatus="{{ wx.load }}"
+  loadStatus="{{ childNode }}"
+  data-options="{{ options }}"
+  style="{{ wx.setStyle(options) }}"
+>
+  <selectable
+    class="view-container"
+    id="view-{{ index }}"
+    wx:for="{{ views }}"
+    wx:key="item"
+    value="{{ item }}"
+    index="{{ index }}"
+    bind:load="load"
+  >
+  </selectable>
+</view>

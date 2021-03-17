@@ -1,0 +1,32 @@
+.c-test-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+
+.c-test-view .waterfall-load-node {
+  height: 50%;
+  flex-grow: 1;
+  transition: all 0.3s;
+  display: inline-flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background: #eeeeee;
+  width: 100%;
+  opacity: 0;
+}
+
+.c-test-view .waterfall-load-other {
+  width: 100%;
+  height: 80rpx;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: cornflowerblue;
+  color: white;
+}

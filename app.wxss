@@ -2,6 +2,7 @@
 
 page{
 --ThemeColor:#ffd662;
+--BackgroundColor:#ffffff;
 }
 
 /* .container {

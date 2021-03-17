@@ -28,7 +28,20 @@ Page({
 
     interval: 3000,
     duration: 800,
+    // 瀑布流参数
+    views: [],
+    loading: false,
+    options: {
+      span: 30,
+      column: 2,
+      gap: [10, 10],
+      rows: 2,
+    },
+    images: [],
+    _page: 1,
+    _type: 0,
 
+    // 登录页面参数
     showLogin: false,
     showContent: false,
   },
@@ -113,9 +126,7 @@ Page({
         }
       }
     });
-  },
-
-  openCate: function (index) {
+  },openCate: function (index) {
     wx: request({
       url: app.globalData.baseURL + "/wp/v2/posts",
       data: {
@@ -128,5 +139,46 @@ Page({
   },
   refreshContent: function (data) {
 
+  },
+onReady: function loadImage() {
+    this.data._type = 1
+    this.setData({ views: [], _type: 1 })
+    this.getHuaBanList()
+  },
+  getHuaBanList() {
+    let { images, _page } = this.data
+    wx.request({
+      url: `https://huaban.com/search/?q=萌宠&page=${_page}&per_page=10&wfl=1`,
+      header: {
+        accept: 'application/json',
+        'accept-language': 'zh-CN,zh;q=0.9',
+        'x-request': 'JSON',
+        'x-requested-with': 'XMLHttpRequest',
+      },
+      success: (res) => {
+        res.data.pins.map((v) => {
+          images.push({
+            url: `https://hbimg.huabanimg.com/${v.file.key}_/fw/480/format/webp`,
+            title: v.raw_text,
+          })
+        })
+        this.setData({ images, _page: ++_page })
+        wx.hideLoading()
+      },
+    })
+  },
+  onReachBottom() {
+    let { loading, _type } = this.data
+    if (!loading) {
+      wx.showLoading({
+        title: 'loading...',
+      })
+      loading = true
+      setTimeout(() => {
+        _type === 0 ? this.generateViews() : this.getHuaBanList()
+        wx.hideLoading()
+        loading = false
+      }, 1000)
+    }
   },
 })

@@ -65,12 +65,28 @@ rich-text{
   }
 /* 主页轮播图样式功能 */
  .SwNews swiper {
-    height: 421.5rpx;
+    height: 240rpx;
     overflow:hidden;
-    border-radius:10rpx;
+    border-radius:20rpx;
     transform: translateY(0)
+    
 }
   .SwNews swiper-item image {
     width: 100%;
     height: 100%;
+  
+}
+
+/* 瀑布流 */
+.container {
+  padding: 10px;
+}
+
+.btns {
+  display: flex;
+  position: fixed;
+  justify-content: space-around;
+  bottom: env(safe-area-inset-bottom);
+  left: 0;
+  width: 100%;
 }

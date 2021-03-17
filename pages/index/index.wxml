@@ -16,17 +16,33 @@
 </swiper>
 
 <!-- 轮播 -->
-	<swiper class='SwNews' indicator-dots="{{true}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}">
+
+<view class='SwNews'>
+	<swiper  indicator-dots="{{true}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}">
 		<block wx:for="{{SwimgUrls}}" wx:key="{{index}}">
 			<swiper-item>
 				<image  mode='widthFix' src="{{item}}" class="slide-image" width="100%" />
 			</swiper-item>
 		</block>
 	</swiper>
-
+</view>
 <i-divider color="balck" line-color="#ffd662" size="18"height="40" >为您推荐</i-divider>
 
 <!-- 瀑布流 -->
+<view class="container">
+  <waterfall
+    wx:if="{{ _type === 0 }}"
+    generic:selectable="test-view"
+    views="{{ views }}"
+    options="{{ options }}"
+  />
+  <waterfall
+    wx:else
+    generic:selectable="image-view"
+    views="{{ images }}"
+    options="{{ options }}"
+  />
+</view>
 
 <!-- 登录弹窗 -->
 <page-container show="{{showLogin}}" round="{{true}}" bind:clickoverlay="refuseLogin">

@@ -1,0 +1,10 @@
+<view class="c-image-view">
+  <view class="waterfall-load-node">
+    <image
+      class="load-image"
+      src="{{ value.url }}"
+      bind:load="load"
+    />
+  </view>
+  <view class="waterfall-load-other">{{ value.title }}</view>
+</view>
