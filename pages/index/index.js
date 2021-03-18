@@ -153,27 +153,32 @@ Page({
   onReady: function () {
     const app = getApp();
     var that = this;
-    // var i = 1;
-    // while (!app.globalData.done) {
-    //   i++;
-    //   setTimeout(function () { }, 100 * i);
-    // }
-    if (app.globalData.userInfo == null) {
-      wx.hideTabBar();
-      that.setData({
-        showLogin: true,
-      });
-    } else {
-      that.setData({
-        showLogin: false,
-        _avatarUrl: app.globalData.userInfo.avatarUrl
-      })
+    var i = 1;
+    while (i < 600) {
+      i++;
+      setTimeout(function () {
+        if (app.globalData.done) {
+          if (app.globalData.userInfo === null) {
+            wx.hideTabBar();
+            that.setData({
+              showLogin: true,
+            });
+          } else {
+            that.setData({
+              showLogin: false,
+              _avatarUrl: app.globalData.userInfo.avatarUrl
+            })
+          }
+          clearInterval();
+        }
+      }, 100 * i)
     }
-  },
-  loadImage() {
+    clearInterval();
+    
     this.data._type = 1
     this.setData({ views: [], _type: 1 })
     this.getHuaBanList()
+    this.onReachBottom()
   },
   getHuaBanList() {
     let { images, _page } = this.data
