@@ -1,16 +1,13 @@
 <!-- 用户信息卡片 -->
-<!-- <view>
-<i-card title="{{userInfo.nickName}}"  thumb="{{userInfo.avatarUrl}}">
-    <view slot="content">账户设置</view>
-</i-card>
-</view> -->
-
-<view calss="cardHeader"></view>
+<view class="cardHeader"></view>
 <view class="i-card">
     <view class="i-card-header">
         <view class="i-card-header-content">
-            <image class="i-card-header-thumb" src="{{userInfo.avatarUrl}}" mode="aspectFit" wx:if="{{userInfo.avatarUrl}}" />
-            {{userInfo.nickName}}
+            <view class="i-card-header-avatar">
+            <image src="{{userInfo.avatarUrl}}" mode="heightFix" wx:if="{{userInfo.avatarUrl}}"/>
+            <image wx:else src="../../images/user.png" mode="heightFix" />
+             </view>
+             <view  class="i-card-header-nickname">{{userInfo.nickName}}</view>
         </view>
         <view class="i-card-header-extra" wx:if="{{ extra }}">{{ extra }}</view>
     </view>

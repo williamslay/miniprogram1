@@ -1,18 +1,1 @@
-<page-container show="{{true}}" overlay="{{false}}" round="{{true}}" close-on-slideDown="{{true}}" bind:leave="exit" bind:clickoverlay="exit">
-  <view class="search-result" wx:if="{{showResult}}">
-    <view class="result-list" wx:for="{{result}}">
-      <navigator url="{{item.url}}">
-        <view class="result-title">
-          <text>{{item.title}}</text>
-        </view>
-      </navigator>
-    </view>
-  </view>
-  <view class="result-title" wx:if="{{showNo}}">
-    <text>未找到您搜索的内容</text>
-  </view>
-  <view class="search-recommend" wx:if="{{showRecommend}}">
-    <text class="title">推荐内容</text>
-  </view>
-  <mp-searchbar wx:if="{{showBar}}" focus="{{true}}" placeholder="Search" search="searchNow" bindclear="searchClear"></mp-searchbar>
-</page-container>
+<search mode="page"></search>

@@ -6,8 +6,15 @@ Component({
       value: "icon"
       //icon, page
     },
+    ssClass:{
+      type:String,
+      //外置CSS class
+      value:""
+    }
   },
-
+  options: {
+    addGlobalClass: true
+  },
   data: {
     history: [],
     result: [],

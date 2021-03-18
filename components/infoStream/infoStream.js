@@ -53,7 +53,7 @@ Component({
           img.excerpt = res.data.excerpt
           img.id = res.data.id
           wx: request({
-            url: `${baseUrl}/wp/v2/media/?p`,
+            url: `${baseUrl}/wp/v2/media/?p=${res.data.featured_media}`,
             data: {
               id: res.data.featured_media,
               _fields: link,
