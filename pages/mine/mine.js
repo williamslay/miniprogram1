@@ -1,5 +1,6 @@
 Page({
 
+  
   /**
    * 页面的初始数据
    */
@@ -11,9 +12,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.stopPullDownRefresh(); //刷新完成后停止下拉刷新动效
     const app=getApp();
     this.setData({
       userInfo:app.globalData.userInfo,
+      backgroundColor: '#ffd662'
+    });
+    wx.setBackgroundColor({
+      
     })
   },
 
@@ -49,7 +55,11 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+    var that = this;
+    that.setData({
+      currentTab: 0 //当前页的一些初始数据，视业务需求而定
+    })
+    this.onLoad(); //重新加载onLoad()
   },
 
   /**

@@ -4,7 +4,8 @@
     <view slot="content">账户设置</view>
 </i-card>
 </view> -->
-<view class="i-card">
+<view calss="cardPage">
+    <view class="i-card">
     <view class="i-card-header">
         <view class="i-card-header-content">
             <image class="i-card-header-thumb" src="{{userInfo.avatarUrl}}" mode="aspectFit" wx:if="{{userInfo.avatarUrl}}" />
@@ -14,4 +15,5 @@
     </view>
     <view class="i-card-body"><slot name="content"></slot></view>
     <view class="i-card-footer"><slot name="footer"></slot></view>
+</view>
 </view>
