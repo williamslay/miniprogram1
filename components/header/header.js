@@ -57,6 +57,13 @@ Component({
         value:'../../images/home.png'
       })
     }
+  },
+   'avatarUrl': function (val) {
+     if (val) {
+       this.setData({
+         value: val
+       })
+     }
   }
   },  
   methods: {

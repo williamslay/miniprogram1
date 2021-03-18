@@ -7,8 +7,8 @@
 <view class="i-card">
     <view class="i-card-header">
         <view class="i-card-header-content">
-            <image class="i-card-header-thumb" src="{{ userInfo.avatarUrl }}" mode="aspectFit" wx:if="{{ userInfo.avatarUrl }}" />
-            {{userInfo.nickName }}
+            <image class="i-card-header-thumb" src="{{userInfo.avatarUrl}}" mode="aspectFit" wx:if="{{userInfo.avatarUrl}}" />
+            {{userInfo.nickName}}
         </view>
         <view class="i-card-header-extra" wx:if="{{ extra }}">{{ extra }}</view>
     </view>

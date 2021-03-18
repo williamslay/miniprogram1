@@ -1,11 +1,6 @@
 .i-card{
-  /* margin:0 16px;
-  height: 60rpx;
-  font-size:14px;
-  position:relative; */
   background-color:#ffd662;
-  border:1rpx solid #dddee1;
-  border-radius:5px
+  height:60rpx;
 }
 
 .i-card-header{
@@ -18,6 +13,10 @@
   text-align:left
 }
 .i-card-header-thumb{
+  width: 100%;
+  height: 100%;
+  border-radius:50%;
+  margin: auto;
   /* display:inline-block;
   width:64rpx;height:64rpx;
   position:relative;

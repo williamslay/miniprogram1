@@ -1,17 +1,15 @@
-const app = getApp();
-
 Page({
   data: {
     verChk: false,
 
-    _avatarUrl: '',
+    _avatarUrl: null,
 
     SwimgUrls: [
       '../../images/switch1.jpg',
       '../../images/switch2.jpg',
       '../../images/switch3.jpg'
     ],//轮播图中图片
-    current:0,
+    current: 0,
 
     cateName: ['柚宠商城', '百科教程', '宠物健康', '宠物美容', '同城活动', '萌猫', '憨狗', '水族', '小型宠', '更多'],//显示名
     cateTerm: [],//后台名
@@ -44,74 +42,77 @@ Page({
 
     // 登录页面参数
     showLogin: false,
-    showContent: false,
   },
   onLoad: function () {
-    var that = this;
-    //检查功能组件
-    if (!wx.canIUse('button.open-type.getUserInfo'))
-      that.setData({
-        verChk: true,
-      });
-    // 查看是否授权
-    wx.getSetting({
-      success: function (res) {
-        if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            success: function (res) {
-              app.globalData.userInfo = res.userInfo;
-              // 用户已经授权过,不需要显示授权页面,所以不需要改变 isHide 的值
-              that.setData({
-                showLogin: false,
-                _avatarUrl: res.userInfo.avatarUrl
-              })
-              // wx.login({
-              //   success: res => {
-              //     // 获取到用户的 code 之后：res.code
-              //     console.log("用户的code:" + res.code);
-              //     // 可以传给后台，再经过解析获取用户的 openid
-              //     // 或者可以直接使用微信的提供的接口直接获取 openid ，方法如下：
-              //     // wx.request({
-              //     //     // 自行补上自己的 APPID 和 SECRET
-              //     //     url: 'https://api.weixin.qq.com/sns/jscode2session?appid=自己的APPID&secret=自己的SECRET&js_code=' + res.code + '&grant_type=authorization_code',
-              //     //     success: res => {
-              //     //         // 获取到用户的 openid
-              //     //         console.log("用户的openid:" + res.data.openid);
-              //     //     }
-              //     // });
-              //   }
-              // });
-            }
-          });
-        } else {
-          // 用户没有授权
-          wx.hideTabBar();
-          that.setData({
-            showLogin: true,
-          });
-        }
-      }
+    const app = getApp();
+    this.setData({
+      verChk: app.globalData.verChk,
     });
+
+    // // 查看是否授权
+    // wx.getSetting({
+    //   success: function (res) {
+    //     if (res.authSetting['scope.userInfo']) {
+    //       wx.getUserInfo({
+    //         success: function (res) {
+    //           app.globalData.userInfo = res.userInfo;
+    //           console.log(app.globalData.userInfo);
+    //           // 用户已经授权过,不需要显示授权页面,所以不需要改变 isHide 的值
+    //           that.setData({
+    //             showLogin: false,
+    //             _avatarUrl: res.userInfo.avatarUrl
+    //           })
+    //           // wx.login({
+    //           //   success: res => {
+    //           //     // 获取到用户的 code 之后：res.code
+    //           //     console.log("用户的code:" + res.code);
+    //           //     // 可以传给后台，再经过解析获取用户的 openid
+    //           //     // 或者可以直接使用微信的提供的接口直接获取 openid ，方法如下：
+    //           //     // wx.request({
+    //           //     //     // 自行补上自己的 APPID 和 SECRET
+    //           //     //     url: 'https://api.weixin.qq.com/sns/jscode2session?appid=自己的APPID&secret=自己的SECRET&js_code=' + res.code + '&grant_type=authorization_code',
+    //           //     //     success: res => {
+    //           //     //         // 获取到用户的 openid
+    //           //     //         console.log("用户的openid:" + res.data.openid);
+    //           //     //     }
+    //           //     // });
+    //           //   }
+    //           // });
+    //         }
+    //       });
+    //     } else {
+    //       // 用户没有授权
+    //       wx.hideTabBar();
+    //       that.setData({
+    //         showLogin: true,
+    //       });
+    //     }
+    //   }
+    // });
   },
   acceptLogin: function (e) {
+    const app = getApp();
     var that = this;
     if (e.detail.userInfo) {
       //用户按了允许授权按钮
-      // 获取到用户的信息了，打印到控制台上看下
-      console.log("用户的信息如下：");
-      console.log(e.detail.userInfo);
+      // // 获取到用户的信息了，打印到控制台上看下
+      // console.log("用户的信息如下：");
+      // console.log(e.detail.userInfo);
       //授权成功后,通过改变 isHide 的值，让实现页面显示出来，把授权页面隐藏起来
+      app.globalData.userInfo = e.detail.userInfo;
       that.setData({
         showLogin: false,
         _avatarUrl: e.detail.userInfo.avatarUrl
       });
+      console.log(app.globalData.userInfo);
       wx.showTabBar();
     } else {
       //用户按了拒绝按钮
-      refuseLogin();
+      that.refuseLogin();
     }
   },
   refuseLogin: function refuseLogin() {
+    const app = getApp();
     var that = this;
     wx.showModal({
       title: '警告',
@@ -129,27 +130,47 @@ Page({
       }
     });
   },
-  openCate: function (index) {
-    wx: request({
-      url: app.globalData.baseURL + "/wp/v2/posts",
-      data: {
-        categories: cataTerm[index],
-      },
-      method: "GET",
-      dataType: "json",
-      success: "refreshContent(res.data)"
-    })
-  },
-  refreshContent: function (data) {
+  // openCate: function (index) {
+  //   wx: request({
+  //     url: app.globalData.baseURL + "/wp/v2/posts",
+  //     data: {
+  //       categories: cataTerm[index],
+  //     },
+  //     method: "GET",
+  //     dataType: "json",
+  //     success: "refreshContent(res.data)"
+  //   })
+  // },
+  // refreshContent: function (data) {
 
-  },
-  swiperChange: function(e) {
+  // },
+  swiperChange: function (e) {
     var that = this;
     that.setData({
       current: e.detail.current,
     })
   },
-  onReady: function loadImage() {
+  onReady: function () {
+    const app = getApp();
+    var that = this;
+    // var i = 1;
+    // while (!app.globalData.done) {
+    //   i++;
+    //   setTimeout(function () { }, 100 * i);
+    // }
+    if (app.globalData.userInfo == null) {
+      wx.hideTabBar();
+      that.setData({
+        showLogin: true,
+      });
+    } else {
+      that.setData({
+        showLogin: false,
+        _avatarUrl: app.globalData.userInfo.avatarUrl
+      })
+    }
+  },
+  loadImage() {
     this.data._type = 1
     this.setData({ views: [], _type: 1 })
     this.getHuaBanList()
