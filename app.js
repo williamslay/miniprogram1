@@ -1,9 +1,10 @@
 App({
   globalData: {
     verChk: false,
-    done: false,
-    userInfo: null,
     baseURL: "https://honki.moe/wp-json",
+
+    login: true,
+    userInfo: null,
   },
 
   onLaunch: function () {
@@ -22,18 +23,17 @@ App({
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(res)
               }
-              this.globalData.done = true
             },
             fail: function () {
-              this.globalData.done = true
+              this.globalData.login = false
             }
           })
         } else {
-          this.globalData.done = true
+          this.globalData.login = false
         }
       },
       fail: function () {
-        this.globalData.done = true
+        this.globalData.login = false
       }
     })
   },

@@ -7,10 +7,12 @@
             <image src="{{userInfo.avatarUrl}}" mode="heightFix" wx:if="{{userInfo.avatarUrl}}"/>
             <image wx:else src="../../images/user.png" mode="heightFix" />
              </view>
-             <view  class="i-card-header-nickname">{{userInfo.nickName}}</view>
+             <view  class="i-card-header-nickname" wx:if="{{userInfo.nickName}}">{{userInfo.nickName}}</view>
+             <view  class="i-card-header-nickname" wx:else> UserName </view>  
+             <navigator url="" class="i-card-serInfo">账户信息</navigator>   
         </view>
-        <view class="i-card-header-extra" wx:if="{{ extra }}">{{ extra }}</view>
     </view>
-    <view class="i-card-body"><slot name="content"></slot></view>
-    <view class="i-card-footer"><slot name="footer"></slot></view>
+    <view class="i-card-body">
+        <view></view>
+    </view>
 </view>

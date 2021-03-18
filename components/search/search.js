@@ -6,14 +6,6 @@ Component({
       value: "icon"
       //icon, page
     },
-    ssClass:{
-      type:String,
-      //外置CSS class
-      value:""
-    }
-  },
-  options: {
-    addGlobalClass: true
   },
   data: {
     history: [],
@@ -21,8 +13,9 @@ Component({
     hot: [],
 
     showIcon: false,
+    showSearch:false,
     showBar: false,
-    showrecommend: false,
+    showRecommend: false,
     showResult: false,
     showNo: false,
   },

@@ -1,8 +1,8 @@
 {
   "usingComponents": {
     "mp-navigation-bar": "/components/navigation-bar/navigation-bar",
-    "Myheader":"/components/header/header",
-    "i-divider":"/components/divider/index",
+    "Myheader": "/components/header/header",
+    "i-divider": "/components/divider/index",
     "waterfall": "/components/waterfall/index",
     "image-view": "/components/image-view/index"
   },

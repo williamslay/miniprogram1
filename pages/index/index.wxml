@@ -18,42 +18,39 @@
 <!-- 轮播 -->
 
 <view class='SwNews'>
-	<swiper  indicator-dots="{{false}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}" bindchange="swiperChange">
+	<swiper indicator-dots="{{false}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}"
+		circular="{{true}}" bindchange="swiperChange">
 		<block wx:for="{{SwimgUrls}}" wx:key="index">
 			<swiper-item>
-				<image  mode='widthFix' src="{{item}}" class="slide-image" width="100%" />
+				<image mode='widthFix' src="{{item}}" class="slide-image" width="100%" />
 			</swiper-item>
 		</block>
 	</swiper>
-  <view class="dots">
-    <block wx:for="{{SwimgUrls}}" wx:key="index">
-      <view class="dot{{index == current ? ' active' : ''}}"></view>
-    </block>
-   </view>  
-  </view>
+	<view class="dots">
+		<block wx:for="{{SwimgUrls}}" wx:key="index">
+			<view class="dot{{index == current ? ' active' : ''}}"></view>
+		</block>
+	</view>
+</view>
 
-<i-divider color="balck" line-color="#ffd662" size="18"height="40" >为您推荐</i-divider>
+<i-divider color="balck" line-color="#ffd662" size="18" height="40">为您推荐</i-divider>
 
 <!-- 瀑布流 -->
 <view class="container">
-  <waterfall
-    generic:selectable="image-view"
-    views="{{ images }}"
-    options="{{ options }}"
-  />
+	<waterfall generic:selectable="image-view" views="{{ images }}" options="{{ options }}" />
 </view>
 
 <!-- 登录弹窗 -->
 <page-container show="{{showLogin}}" round="{{true}}" bind:clickoverlay="refuseLogin">
-  <view class="login-box">
-	<view class="logo">
-		<image mode='widthFix' src='/images/logo.jpg'></image>
+	<view class="login-box">
+		<view class="logo">
+			<image mode='widthFix' src='/images/logo.jpg'></image>
+		</view>
+		<view class="txt">
+			<text class="title">留下我的足迹</text>
+		</view>
+		<button class="button" type="primary" open-type="getUserInfo" bindgetuserinfo="acceptLogin">
+			微信授权
+		</button>
 	</view>
-<view class="txt">
-  <text class="title">留下我的足迹</text>
-</view>
-	<button class="button" type="primary" open-type="getUserInfo" bindgetuserinfo="acceptLogin">
-		微信授权
-  </button>
-</view>
 </page-container>

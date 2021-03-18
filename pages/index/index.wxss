@@ -1,89 +1,98 @@
 /* 验证登录页样式 */
-.login-box{
-  margin:0 0 80rpx 0;
+.login-box {
+  margin: 0 0 80rpx 0;
 }
-.logo {
-    margin:0 0 40rpx 0;
-    padding: 80rpx 0 40rpx 0;
-    border-bottom: 2rpx solid #ccc;
-    text-align: center;
-  }
-.logo image {
-    width:50%;
-  }
 
-rich-text{
-  width:100%;
+.logo {
+  margin: 0 0 40rpx 0;
+  padding: 80rpx 0 40rpx 0;
+  border-bottom: 2rpx solid #ccc;
+  text-align: center;
+}
+
+.logo image {
+  width: 50%;
+}
+
+rich-text {
+  width: 100%;
 }
 
 .txt {
-    width:100%;
-    font-size:1rem;
-    line-height:1.4em;
-    text-align:justify;
-    margin:40rpx 40rpx;
-  }
-.txt .title{
-    font-size:2em;
-    text-align:center;
-    color: #444444;
-    margin: 0.5em 0 0.5em 0;
-  }
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.4em;
+  text-align: justify;
+  margin: 40rpx 40rpx;
+}
+
+.txt .title {
+  font-size: 2em;
+  text-align: center;
+  color: #444444;
+  margin: 0.5em 0 0.5em 0;
+}
+
 .txt .normal {
-    color: #000000;
-  }
+  color: #000000;
+}
 
 .button {
-  margin:40rpx auto;
+  margin: 40rpx auto;
   border-radius: 80rpx;
-  width:60%;
+  width: 60%;
   font-size: 35rpx;
 }
 
 /* 功能栏样式 */
-  .Menu {
-    margin-top: 30rpx; 
-    height: 300rpx;
-  }
-  .Menu .item{
-    width: 20%;
-    height: 108rpx;
-  }
-  .Menu_item{
-    display: flex;
-    flex-wrap: wrap;
-    height: 216rpx;
-    text-align: center;
-    font-size: 28rpx;
-  
-  }
-  .Menu .item image{
-    display:block;
-    width: 80rpx;
-    height: 80rpx;
-    margin:auto;
-  }
-/* 主页轮播图样式功能 */
- .SwNews swiper {
-    height: 240rpx;
-    overflow:hidden;
-    border-radius:20rpx;
-    transform: translateY(0)
-    
-}
-  .SwNews swiper-item image {
-    width: 100%;
-    height: 100%;
-  
+.Menu {
+  margin-top: 30rpx;
+  height: 300rpx;
 }
 
-.dots{
+.Menu .item {
+  width: 20%;
+  height: 108rpx;
+}
+
+.Menu_item {
+  display: flex;
+  flex-wrap: wrap;
+  height: 216rpx;
+  text-align: center;
+  font-size: 28rpx;
+
+}
+
+.Menu .item image {
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+  margin: auto;
+}
+
+/* 主页轮播图样式功能 */
+.SwNews swiper {
+  height: 240rpx;
+  overflow: hidden;
+  border-radius: 20rpx;
+  transform: translateY(0)
+}
+
+.SwNews swiper-item image {
+  width: 100%;
+  height: 100%;
+
+}
+
+.dots {
   position: relative;
-  left:70%;
+  left: 70%;
   bottom: 40rpx;
   display: flex;
 }
-.dots .dot{
+
+.dots .dot {
   margin: 0 5rpx;
   width: 40rpx;
   height: 14rpx;
@@ -91,7 +100,8 @@ rich-text{
   border-radius: 8rpx;
   transition: all .6s;
 }
-.dots .dot.active{
+
+.dots .dot.active {
   width: 40rpx;
   background: #ffd662;
 }

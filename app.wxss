@@ -1,4 +1,4 @@
-page{
---ThemeColor:#ffd662;
---BackgroundColor:#ffffff;
+page {
+  --ThemeColor: #ffd662;
+  --BackgroundColor: #ffffff;
 }
