@@ -45,6 +45,7 @@ Page({
   onLoad: function () {
 
   },
+  forbid:function(){},
   acceptLogin: function (e) {
     const app = getApp();
     var that = this;

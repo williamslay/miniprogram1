@@ -6,6 +6,15 @@ Page({
    */
   data: {
     userInfo:null,
+    cateName: ['我的关注', '常去版块', '我的宠物', '我的服务', '客服反馈'], //显示名
+    cateTerm: [], //后台名
+    cateImg: [
+      '../../images/MineFocus.png',
+      '../../images/MineUsual.png',
+      '../../images/MinePet.png',
+      '../../images/Mineservice.png',
+      '../../images/MineOfficial.png',
+    ], //图片地址
   },
 
   /**
@@ -22,7 +31,7 @@ Page({
       
     })
   },
-
+  forbid:function(){},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -2,9 +2,9 @@ App({
   globalData: {
     verChk: false,
     baseURL: "https://honki.moe/wp-json",
-
     login: true,
     userInfo: null,
+    Pet:null
   },
 
   onLaunch: function () {

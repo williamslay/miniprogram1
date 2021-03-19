@@ -42,12 +42,6 @@
         "text": "",
         "iconPath": "images/Mine.png",
         "selectedIconPath": "images/MineS.png"
-      },
-      {
-        "pagePath": "pages/test/test",
-        "text": "",
-        "iconPath": "images/Mine.png",
-        "selectedIconPath": "images/MineS.png"
       }
     ]
   }

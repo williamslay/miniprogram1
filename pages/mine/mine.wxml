@@ -5,14 +5,56 @@
         <view class="i-card-header-content">
             <view class="i-card-header-avatar">
             <image src="{{userInfo.avatarUrl}}" mode="heightFix" wx:if="{{userInfo.avatarUrl}}"/>
-            <image wx:else src="../../images/user.png" mode="heightFix" />
+            <image wx:else src="../../images/XiaoBai.jpg" mode="heightFix" />
              </view>
              <view  class="i-card-header-nickname" wx:if="{{userInfo.nickName}}">{{userInfo.nickName}}</view>
-             <view  class="i-card-header-nickname" wx:else> UserName </view>  
-             <navigator url="" class="i-card-serInfo">账户信息</navigator>   
+             <view  class="i-card-header-nickname" wx:else> 罗小白</view>  
+             <navigator url="" class="i-card-userInfo">账户信息</navigator>   
         </view>
     </view>
     <view class="i-card-body">
-        <view></view>
+        <view class="i-card-func1">
+        <image src="../../images/dynamic.png" mode="heightFix"/>
+        <navigator hover-class="none">动态</navigator>
+        </view>
+        <view class="i-card-func2">
+        <image src="../../images/messege.png" mode="heightFix"/>
+        <navigator hover-class="none">消息</navigator>
+        </view>
+        <view class="i-card-func3">
+        <image src="../../images/favorites.png" mode="heightFix"/>
+        <navigator hover-class="none">收藏</navigator>
+        </view>
+        <view class="i-card-func4">
+        <image src="../../images/history.png" mode="heightFix"/>
+        <navigator hover-class="none">历史</navigator>
+        </view>
     </view>
+</view>
+<!-- 菜单功能栏 -->
+<swiper indicator-dots="{{false}}" class="categories" class='Menu'>
+	<swiper-item class="Menu_item" catchtouchmove="forbid">
+		<view wx:for="{{cateName}}" wx:key="index" class="item" bindtap="openCate(index)">
+			<image mode='aspectFit' src="{{cateImg[index]}}"></image>
+			<text>{{item}}</text>
+		</view>
+	</swiper-item>
+</swiper>
+<!-- 宠物栏 -->
+<view class="pet-card">
+    <view>我的宠物</view>
+    <view class="pet-card-avatar">
+        <image src="{{Pet.avatarUrl}}" mode="heightFix" wx:if="{{Pet.avatarUrl}}" />
+        <image wx:else src="../../images/XiaoHei.jpg" mode="heightFix"  />
+    </view>
+    <view class="pet-card-nickname" wx:if="{{Pet.Name}}">{{Pet.Name}}</view> 
+    <view class="pet-card-nickname" wx:else>小黑</view> 
+    <view class="pet-card-year" wx:if="{{Pet.Year}}">{{Pet.Year}}</view> 
+    <view class="pet-card-year" wx:else>10岁</view>
+    <view class="pet-card-Birthday" wx:if="{{Pet.Birthday}}">{{Pet.Birthday}}</view> 
+    <view class="pet-card-Birthday" wx:else>11月11日</view>
+    <view class="pet-card-Corlor" wx:if="{{Pet.Corlor}}">{{Pet.Corlor}}</view> 
+    <view class="pet-card-Corlor" wx:else>黑色</view>
+    <view class="pet-card-Character" wx:if="{{Pet.Character}}">{{Pet.Character}}</view> 
+    <view class="pet-card-Character" wx:else>善良</view>
 </view>
