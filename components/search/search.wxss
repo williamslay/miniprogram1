@@ -1,21 +1,37 @@
-:root{
-  --icon-size:80rpx;
+:root {
+  --icon-size: 80rpx;
 }
-.search{
 
+.search-container {
+  padding: 30rpx 40rpx 0 40rpx;
 }
-.search-icon{
-  width:var(--icon-size);
-  height:var(--icon-size);
+
+.search-icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
   border-radius: 50%;
 }
-.search-bar{
-  width:100%;
-  bottom:100%;
+
+.search-bar {
+  width: 100%;
+  margin: 20rpx 0;
 }
-.search-recommend{
+
+.search-recommend {
+  height: 30vh;
+  overflow: hidden;
 
 }
-.search-result{
+
+.search-discover {
+  bottom: 0;
+  overflow: auto;
+  max-height: 300rpx;
+}
+
+.search-result {
+  height: 85vh;
+  max-height: 1000rpx;
+  overflow: auto;
 
 }

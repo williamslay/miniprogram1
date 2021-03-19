@@ -4,7 +4,17 @@ App({
     baseURL: "https://honki.moe/wp-json",
     login: true,
     userInfo: null,
-    Pet:null
+    Pet: {
+      name: "",
+      nickname: "",
+      weight: "",
+      birthday: [
+        2000, 1, 1
+      ],
+      date: [
+        2000, 1, 1
+      ],
+    },
   },
 
   onLaunch: function () {

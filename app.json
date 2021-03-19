@@ -4,7 +4,7 @@
     "pages/mine/mine",
     "pages/post/post",
     "pages/search/search",
-    "pages/test/test"
+    "pages/edit/edit"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -19,7 +19,8 @@
     "selectedColor": "#2A8CE5",
     "backgroundColor": "#ffF",
     "borderStyle": "white",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/index/index",
         "text": "",
         "iconPath": "images/Index.png",
@@ -32,10 +33,10 @@
         "selectedIconPath": "images/SearchS.png"
       },
       {
-        "pagePath": "pages/post/post",
+        "pagePath": "pages/edit/edit",
         "text": "",
-        "iconPath": "images/Post.png",
-        "selectedIconPath": "images/PostS.png"
+        "iconPath": "images/Edit.png",
+        "selectedIconPath": "images/EditS.png"
       },
       {
         "pagePath": "pages/mine/mine",

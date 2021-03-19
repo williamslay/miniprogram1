@@ -33,7 +33,7 @@
 	</view>
 </view>
 
-<i-divider color="balck" line-color="#ffd662" size="18" height="40">为您推荐</i-divider>
+<i-divider color="black" line-color="#ffd662" size="18" height="40">为您推荐</i-divider>
 
 <!-- 瀑布流 -->
 <view class="container">
