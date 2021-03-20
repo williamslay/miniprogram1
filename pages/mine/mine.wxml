@@ -41,8 +41,8 @@
 	</swiper-item>
 </swiper>
 <!-- 宠物栏 -->
-<view class="pet-card">
-    <view>我的宠物</view>
+<view class="pet-card" bindtap="minePet">
+    <view class="pet-card-title">我的宠物</view>
     <view class="pet-card-avatar">
         <image  src="{{Pet.avatarUrl}}" mode="heightFix" wx:if="{{Pet.avatarUrl}}" />
         <image wx:else src="../../images/XiaoHei.jpg" mode="heightFix" />
@@ -62,13 +62,13 @@
     <view class="divider-line2"></view>
     <view class="pet-card-Birthday" wx:if="{{Pet.Birthday}}">
         <view class="pet-card-data">{{Pet.Birthday[1]}}</view>/<view class="pet-card-data">{{Pet.Birthday[2]}}</view>
-        <view class="pet-card-dataNote">生日</view>
+        <view class="pet-card-dataNote2">生日</view>
     </view> 
     <view class="pet-card-Birthday" wx:else>
         <view class="pet-card-data">11</view>/<view class="pet-card-data">01</view>
-        <view class="pet-card-dataNote">生日</view>
+        <view class="pet-card-dataNote2">生日</view>
     </view>
-    <view class="divider-line2"></view>
+    <view class="divider-line3"></view>
     <view class="pet-card-weight" wx:if="{{Pet.weight}}">
         <view class="pet-card-data">{{Pet.weight}}</view>Kg
         <view class="pet-card-dataNote">体重</view>
@@ -77,14 +77,29 @@
         <view class="pet-card-data">2.5</view>Kg
         <view class="pet-card-dataNote">体重</view>
     </view>
-    <view class="divider-line2"></view>
+    <view class="divider-line4"></view>
     <view class="pet-card-date" wx:if="{{Pet.date}}">
         <view class="pet-card-data">{{Pet.date}}</view>天
-        <view class="pet-card-dataNote">陪伴天数</view>
+        <view class="pet-card-dataNote">已陪伴您</view>
     </view> 
     <view class="pet-card-date" wx:else>
         <view class="pet-card-data">3425</view>天
-        <view class="pet-card-dataNote">陪伴天数</view>
+        <view class="pet-card-dataNote">已陪伴您</view>
     </view>
     </view>
+</view>
+<!-- 社区相关 -->
+<view class="comunity-card"bindtap="mineComunity">
+<view class="comunity-card-title">我的社区</view>
+<view class="comunity-card-favor">
+    <image class="read" src="../../images/MineRead.png"></image>
+    <view class="comunity-card-dataNote">获得阅读量</view>
+    <view class="comunity-card">{{Read}}</view>
+</view>
+<view class="divider-line5"></view>
+<view class="comunity-card-at">
+    <image class="favor" src="../../images/MineFavor.png"></image>
+  <view class="comunity-card-dataNote">获得赞同数</view>
+  <view class="comunity-card">{{favor}}</view>  
+</view>
 </view>

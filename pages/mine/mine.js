@@ -15,6 +15,8 @@ Page({
       '../../images/Mineservice.png',
       '../../images/MineOfficial.png',
     ], //图片地址
+    Read:666,
+    favor:666,
   },
 
   /**
@@ -38,7 +40,9 @@ Page({
   onReady: function () {
     
   },
-
+  minePet:function(){
+    
+  },
   /**
    * 生命周期函数--监听页面显示
    */

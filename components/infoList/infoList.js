@@ -4,7 +4,8 @@ Component({
       type: Array,
       value: [{
         title: null,
-        img:null,
+        img: null,
+        excerpt: null,
         url: null
       }]
     }, //Data
@@ -16,12 +17,4 @@ Component({
   options: {
     addGlobalClass: true
   },
-  data: {
-
-  },
-  observers: {
-    info: {
-
-    }
-  }
 })

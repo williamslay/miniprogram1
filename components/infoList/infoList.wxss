@@ -1,24 +1,24 @@
 :root {
+  --bgColor: inherit;
+  --sepColor: #e0e0e0;
   --divColor: #444444;
 }
 
-.cage {
+.box {
+  display:block;
   margin: 0;
   padding: 0;
+  border: 1% 0 var(--sepColor);
   width: 100%;
-}
-
-.box {
-  margin: 10rpx 0;
-  padding: 0;
-  width: 100%;
-  height: var(--lenH);
+  height: 4em;
+  background-color: var(--bgColor);
 }
 
 .left {
   margin: 0;
   padding: 10%;
-  width: var(--lenH);
+  width: 4em;
+  display: flex;
 }
 
 .img {
@@ -28,11 +28,13 @@
 
 .right {
   margin: 0;
-  padding: 10% 20%;
+  padding: 10% 20% 10% 10%;
 }
 
 .title {
-  font-size: 2em;
+  font-size: 1.2em;
+  height: 1.4em;
+  overflow: hidden;
 }
 
 .divider {
@@ -41,4 +43,7 @@
   height: 1%;
 }
 
-.excerpt {}
+.excerpt {
+  font-size: 1ex;
+  overflow: hidden;
+}

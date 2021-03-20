@@ -1,4 +1,4 @@
-<view class="{{'cage' + exClass}}">
+<view class="{{exClass}}">
   <navigator wx:for="{{info}}" url="{{item.url}}" class="box">
     <view wx:if="{{item.img != null}}" class="left">
       <image class="img" mode="aspectFill" src="{{item.img}}"></image>

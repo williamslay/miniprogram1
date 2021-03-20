@@ -1,37 +1,24 @@
-<page-container show="{{showSearch}}" overlay="{{false}}" round="{{true}}" close-on-slideDown="{{true}}" bind:leave="exit">
+<page-container show="{{showSearch}}" overlay="{{false}}" round="{{true}}" close-on-slideDown="{{false}}"
+  bind:leave="exit">
   <view class="search-container">
 
     <view class="search-result" wx:if="{{showResult}}">
-      <waterfall generic:selectable="image-view" views="{{ results }}" options="{{ options }}"></waterfall>
+      <waterfall generic:selectable="image-view" views="{{results}}" options="{{options}}"></waterfall>
     </view>
 
     <view class="result-title" wx:if="{{showNo}}">
       <text>未找到您搜索的内容</text>
     </view>
 
-    <swiper class="search-discover" wx:if="{{showDiscover}}">
-      <swiper-item class="discover-content">
-        
-      </swiper-item>
-    </swiper>
+    <infoList info="{{discover}}" class="search-discover" wx:if="{{showDiscover}}">
+    </infoList>
 
     <view class="search-bar" wx:if="{{showBar}}">
       <input placeholder="Search..." bindfocus="searchDiscover" bindinput="searchNow"></input>
     </view>
 
-    <swiper class="search-recommend" wx:if="{{showRecommend}}">
-      <swiper-item class="recommend-content">
-        <navigator wx:for="{{recommend}}" url='{{"/pages/post/post?id=" + item.id}}'>
-          <view class="left">
-            <image src="{{item.img}}"></image>
-          </view>
-          <view class="right">
-            <text class="title">{{item.title}}</text>
-            <text class="excerpt">{{item.excerpt}}</text>
-          </view>
-        </navigator>
-      </swiper-item>
-    </swiper>
+    <infoList info="{{recommend}}" class="search-recommend" wx:if="{{showRecommend}}">
+    </infoList>
 
   </view>
 </page-container>

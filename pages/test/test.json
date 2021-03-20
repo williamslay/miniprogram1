@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "stream":"/components/infoStream/infoStream"
+    "infoList":"/components/infoList/infoList"
   }
 }

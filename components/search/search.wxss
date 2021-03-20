@@ -3,6 +3,7 @@
 }
 
 .search-container {
+  margin: 0;
   padding: 30rpx 40rpx 0 40rpx;
 }
 
@@ -20,7 +21,6 @@
 .search-recommend {
   height: 30vh;
   overflow: hidden;
-
 }
 
 .search-discover {
