@@ -9,9 +9,9 @@ Component({
         url: null
       }]
     }, //Data
-    exClass: {
+    exclass: {
       type: String,
-      value: null
+      value: ""
     } //CSS class
   },
   options: {

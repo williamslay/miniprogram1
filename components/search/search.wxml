@@ -10,15 +10,35 @@
       <text>未找到您搜索的内容</text>
     </view>
 
-    <infoList info="{{discover}}" class="search-discover" wx:if="{{showDiscover}}">
-    </infoList>
+    <view class="search-discover" wx:if="{{showDiscover}}">
+      <navigator wx:for="{{discover}}" url="{{item.url}}" class="box">
+        <view wx:if="{{item.img != null}}" class="left">
+          <image class="img" mode="aspectFill" src="{{item.img}}"></image>
+        </view>
+        <view class="right">
+          <view class="title"><text>{{item.title}}</text></view>
+          <view class="divider"></view>
+          <view class="excerpt"><text>{{item.excerpt}}</text></view>
+        </view>
+      </navigator>
+    </view>
 
     <view class="search-bar" wx:if="{{showBar}}">
       <input placeholder="Search..." bindfocus="searchDiscover" bindinput="searchNow"></input>
     </view>
 
-    <infoList info="{{recommend}}" class="search-recommend" wx:if="{{showRecommend}}">
-    </infoList>
+    <view class="search-recommend" wx:if="{{showRecommend}}">
+      <navigator wx:for="{{recommend}}" url="{{item.url}}" class="box">
+        <view class="left">
+          <image wx:if="{{item.img != null}}" class="img" mode="aspectFill" src="{{item.img}}"></image>
+        </view>
+        <view class="right">
+          <view class="title"><text>{{item.title}}</text></view>
+          <view class="divider"></view>
+          <view class="excerpt"><text>{{item.excerpt}}</text></view>
+        </view>
+      </navigator>
+    </view>
 
   </view>
 </page-container>
