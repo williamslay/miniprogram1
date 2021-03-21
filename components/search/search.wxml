@@ -21,9 +21,7 @@
 
     <view class="search-discover" wx:if="{{showDiscover}}">
       <navigator wx:for="{{discover}}" url="{{item.url}}" class="box-small">
-          <view class="title"><text>{{item.title}}</text></view>
-          <view class="divider"></view>
-          <view class="excerpt"><text>{{item.excerpt}}</text></view>
+          <text>{{item.title}}</text>
       </navigator>
     </view>
 
