@@ -22,7 +22,7 @@ Page({
       id: 1,
       zIndex: 2,
       opacity: 0.2,
-      left: 40,
+      left: -20,
       iamge: "../../images/comu1.jpg",
       animation: null
     },
@@ -30,7 +30,7 @@ Page({
       id: 2,
       zIndex: 4,
       opacity: 0.4,
-      left: 80,
+      left: 0,
       iamge: "../../images/comu2.jpg",
       animation: null
     },
@@ -38,7 +38,7 @@ Page({
       id: 3,
       zIndex: 6,
       opacity: 0.6,
-      left: 120,
+      left:20,
       iamge: "../../images/comu3.jpg",
       animation: null
     },
@@ -46,7 +46,7 @@ Page({
       id: 4,
       zIndex: 8,
       opacity: 1,
-      left: 160,
+      left: 40,
       iamge: "../../images/comu4.jpg",
       animation: null
     },
@@ -54,7 +54,7 @@ Page({
       id: 5,
       zIndex: 6,
       opacity: 0.6,
-      left: 200,
+      left: 60,
       iamge: "../../images/comu5.jpg",
       animation: null
     },
@@ -62,7 +62,7 @@ Page({
       id: 6,
       zIndex: 4,
       opacity: 0.4,
-      left: 240,
+      left: 80,
       iamge: "../../images/comu6.jpg",
       animation: null
     },
@@ -70,7 +70,7 @@ Page({
       id: 7,
       zIndex: 2,
       opacity: 0.2,
-      left: 280,
+      left: 100,
       iamge: "../../images/comu7.jpg",
       animation: null
     },
@@ -168,7 +168,6 @@ Page({
       })
     }
   },
-  /**左箭头 */
   left: function () {
     //
     var last = this.data.datas.pop(); //获取数组的最后一个
@@ -177,7 +176,6 @@ Page({
     this.data.order.push(orderFirst);
     this.move();
   },
-  /** */
   right: function () {
     var first = this.data.datas.shift(); //获取数组的第一个
     this.data.datas.push(first);//放到数组的最后一个位置

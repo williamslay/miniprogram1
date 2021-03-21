@@ -1,3 +1,4 @@
+const app = getApp()
 Component({
   properties: {
     mode: {
@@ -12,54 +13,54 @@ Component({
     history: [],
     results: [{
       title: 1,
-      img: null,
+      img: "/images/Edit.png",
       excerpt: 123,
       url: null
     }, {
       title: 1,
-      img: null,
+      img: "/images/Edit.png",
       excerpt: 123,
       url: null
     }, {
       title: 1,
-      img: null,
+      img: "/images/Edit.png",
       excerpt: 123,
       url: null
     }, {
       title: 1,
-      img: null,
+      img: "/images/Edit.png",
       excerpt: 123,
       url: null
     }],
     recommend: [{
       title: 1,
-      img: null,
+      img: "/images/Edit.png",
       excerpt: 123,
       url: null
     }, {
       title: 1,
-      img: null,
+      img: "/images/Edit.png",
       excerpt: 123,
       url: null
     }, {
       title: 1,
-      img: null,
+      img: "/images/Edit.png",
       excerpt: 123,
       url: null
     }],
     discover: [{
       title: 1,
-      img: null,
+      img: "/images/Edit.png",
       excerpt: 123,
       url: null
     }, {
       title: 1,
-      img: null,
+      img: "/images/Edit.png",
       excerpt: 123,
       url: null
     }, {
       title: 1,
-      img: null,
+      img: "/images/Edit.png",
       excerpt: 123,
       url: null
     }, ],
@@ -96,55 +97,89 @@ Component({
       }
     }
   },
-
-  exit: function () {
-    wx: wx.navigateBack({
-      delta: 1,
-    });
+  pageLifetimes: {
+    show: function () {
+      if (this.properties.mode == "page")
+        this.setData({
+          showSearch: true,
+        })
+    }
   },
 
-  expand: function () {
-    this.setData({
-      showIcon: false,
-      showSearch: true,
-      showBar: true,
-      showRecommend: true,
-    })
+  methods: {
+    exit: function () {
+      if (this.properties.mode == "icon") {
+        this.setData({
+          showSearch: false,
+          showIcon: true
+        })
+      }
+      if (this.properties.mode == "page") {
+        this.setData({
+          showSearch: false,
+        })
+      }
+      wx.navigateBack({
+        delta: 1,
+      });
+    },
+
+    expand: function () {
+      this.setData({
+        showIcon: false,
+        showSearch: true,
+        showBar: true,
+        showRecommend: true,
+      })
+    },
+
+    searchStart: function () {
+      wx.request({
+        url: `${app.globalData.baseURL}/wp/v2/search`,
+        success: (res) => {
+          this.setData({
+            discover: res.data,
+            showRecommend: false,
+            showDiscover: true,
+          })
+        }
+      })
+    },
+
+    searchDiscover: function (e) {
+
+    },
+
+    searchNow: function (e) {
+      if (e.detail.value) {
+        history.push(e.detail.value);
+        wx.request({
+          url: app.globalData.baseURL + "/wp/v2/search",
+          data: {
+            search: history[0],
+            type: "post"
+          },
+          method: "GET",
+          dataType: "json",
+          success: "listResult",
+        });
+        while (history.length > 16)
+          history.pop();
+      }
+    },
+
+    listResult: function (res) {
+      if (res.data.length > 0) {
+        result = res.data;
+        this.setData({
+          showRecommand: false,
+          showResult: true,
+        })
+      } else {
+        this.setData({
+          showNo: true,
+        })
+      }
+    },
   },
-
-  // searchDiscover: function () {
-
-  // },
-
-  // searchNow: function (e) {
-  //   if (e.detail.value) {
-  //     history.push(e.detail.value);
-  //     wx.request({
-  //       url: app.globalData.baseURL + "/wp/v2/search",
-  //       data: {
-  //         search: history[0],
-  //         type: "post"
-  //       },
-  //       method: "GET",
-  //       dataType: "json",
-  //       success: "listResult",
-  //     });
-  //     while (history.length > 16)
-  //       history.pop();
-  //   }
-  // },
-
-  // listResult: function (res) {
-  //   if (res.data.length > 0) {
-  //     result = res.data;
-  //     this.setData({
-  //       showRecommand: false,
-  //       showResult: true,
-  //     })
-  //   } else {
-  //     this.setData({
-  //       showNo: true,
-  //     })
-  //   }
-  // },
 })
