@@ -63,8 +63,8 @@ Component({
       img: "/images/Edit.png",
       excerpt: 123,
       url: null
-      },],
-    category:[""],
+    }, ],
+    category: ["综合", "好物", "服务", "交易", "经验", "用户"],
 
     showIcon: false,
     showSearch: false,
@@ -77,6 +77,7 @@ Component({
 
     showOver: false,
     searchVal: "",
+    searchCate: null,
   },
 
   lifetimes: {
@@ -161,7 +162,7 @@ Component({
         url: `${app.globalData.baseURL}/wp/v2/search`,
         data: {
           type: "post",
-          search: e.detail.value
+          search: e.detail.value,
         },
         success: (res) => {
           this.setData({

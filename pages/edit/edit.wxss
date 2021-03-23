@@ -6,10 +6,15 @@
 
 .header {
   height: 3em;
-  margin: 1em 0;
+  margin: 1ex 0;
   padding: 0;
   display: flex;
   flex-flow: row-reverse nowrap;
+}
+
+.subject {
+  border-radius: 1em;
+  background-color: #eea;
 }
 
 .button {
@@ -25,6 +30,31 @@
   text-align: center;
 }
 
+.main {
+  height: 70%;
+  width: 100%;
+  border-radius: 1em;
+  margin: 1ex 0;
+}
+
 .subject {
   height: 100%;
+}
+
+.bottom {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 1ex 0;
+}
+
+.icon-outer {
+  height: 2em;
+  width: 2em;
+  display: table;
+  align-content: center;
+}
+
+.icon {
+  display: table-cell;
+  vertical-align: middle;
 }

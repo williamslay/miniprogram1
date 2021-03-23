@@ -1,0 +1,8 @@
+<swiper indicator-dots="{{false}}" class="categories" class='Menu'>
+	<swiper-item class="Menu_item" catchtouchmove="forbid">
+		<view wx:for="{{cateName}}" wx:key="index" class="item" bindtap="openCate(index)">
+			<image mode='aspectFit' src="{{cateImg[index]}}"></image>
+			<text>{{item}}</text>
+		</view>
+	</swiper-item>
+</swiper>

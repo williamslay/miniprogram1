@@ -4,7 +4,20 @@
     "pages/mine/mine",
     "pages/post/post",
     "pages/search/search",
-    "pages/edit/edit"
+    "pages/edit/edit",
+    "pages/catePage/more/more",
+    "pages/catePage/block/bird/bird",
+    "pages/catePage/block/cat/cat",
+    "pages/catePage/block/dog/dog",
+    "pages/catePage/block/fish/fish",
+    "pages/catePage/block/minipet/minipet",
+    "pages/catePage/block/snake/snake",
+    "pages/catePage/city/city",
+    "pages/catePage/cyclopedia/cyclopedia",
+    "pages/catePage/invitation/invitation",
+    "pages/catePage/petBeauty/petBeauty",
+    "pages/catePage/petHelth/peyHelth",
+    "pages/catePage/youpetStore/youpetStore"
   ],
   "window": {
     "backgroundTextStyle": "light",

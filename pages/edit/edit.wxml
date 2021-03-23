@@ -4,15 +4,24 @@
       <view class="inner">发布</view>
     </view>
     <view class="subject">
-      <input placeholder="主题"></input>
+      <input placeholder="主题..."></input>
     </view>
   </view>
   <view class="main">
     <editor></editor>
   </view>
   <view class="bottom">
-    <image class="icon"></image>
-    <image class="icon"></image>
-    <button class="button">发布</button>
+    <view class="icon-outer">
+      <image class="icon"></image>
+    </view>
+    <view class="icon-outer">
+      <image class="icon"></image>
+    </view>
+    <view class="icon-outer">
+      <image class="icon"></image>
+    </view>
+    <view class="button">
+      <view class="inner">发布</view>
+    </view>
   </view>
 </view>

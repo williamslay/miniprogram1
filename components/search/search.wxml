@@ -30,7 +30,11 @@
     </view>
 
     <view class="search-cate">
-      <view class="capsule" wx:for="{{category}}" wx:key="category">{{item}}</view>
+      <view class="cate" wx:for="{{category}}" wx:key="category">
+        <view class="content">{{item}}</view>
+        <view class="divider"></view>
+      </view>
+     
     </view>
     <view class="search-bar">
       <view class="input">

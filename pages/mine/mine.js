@@ -23,7 +23,7 @@ Page({
       zIndex: 2,
       opacity: 0.2,
       left: -20,
-      iamge: "https://gitee.com/williamslay/youpet/raw/master/image/comu1.jpg",
+      iamge: "https://alxga.goho.co/storage/attachments/2021/03/23/gjj5Dsk93Qm2KNWLvbtsPvkATQ6s34MP1Lumrzoh_thumb.jpg",
       animation: null
     },
     {
@@ -31,7 +31,7 @@ Page({
       zIndex: 4,
       opacity: 0.4,
       left: 0,
-      iamge: "https://gitee.com/williamslay/youpet/raw/master/image/comu2.jpg",
+      iamge: "https://alxga.goho.co/storage/attachments/2021/03/23/BLhNYUaVj9pt8X9zdxD0Pd5AQ25btLd3efuom4wA_thumb.jpg",
       animation: null
     },
     {
@@ -39,7 +39,7 @@ Page({
       zIndex: 6,
       opacity: 0.6,
       left:20,
-      iamge: "https://gitee.com/williamslay/youpet/raw/master/image/comu3.jpg",
+      iamge: "https://alxga.goho.co/storage/attachments/2021/03/23/I5j38yACSJfANX5r87qCm8zEdSFapcFYengS6c5b_thumb.jpg",
       animation: null
     },
     {
@@ -47,7 +47,7 @@ Page({
       zIndex: 8,
       opacity: 1,
       left: 40,
-      iamge: "https://gitee.com/williamslay/youpet/raw/master/image/comu4.jpg",
+      iamge: "https://alxga.goho.co/storage/attachments/2021/03/23/IFJ8eTGkbWC159TpotNqUGQkEHygN6ZJ7EWTMgaF_thumb.jpg",
       animation: null
     },
     {
@@ -55,7 +55,7 @@ Page({
       zIndex: 6,
       opacity: 0.6,
       left: 60,
-      iamge: "https://gitee.com/williamslay/youpet/raw/master/image/comu5.jpg",
+      iamge: "https://alxga.goho.co/storage/attachments/2021/03/23/6Pp6Yq2EpRbM2CGgWRLnGjoAI13Bmr3tI7otgLyj_thumb.jpg",
       animation: null
     },
     {
@@ -63,7 +63,7 @@ Page({
       zIndex: 4,
       opacity: 0.4,
       left: 80,
-      iamge: "https://gitee.com/williamslay/youpet/raw/master/image/comu6.jpg",
+      iamge: "https://alxga.goho.co/storage/attachments/2021/03/23/BGKTrVV6us9saGqgu7KzpLs5RryaLxTXydV9OIEn_thumb.jpg",
       animation: null
     },
     {
@@ -71,7 +71,7 @@ Page({
       zIndex: 2,
       opacity: 0.2,
       left: 100,
-      iamge: "https://gitee.com/williamslay/youpet/raw/master/image/comu7.jpg",
+      iamge: "https://alxga.goho.co/storage/attachments/2021/03/23/77P8XZjDqwZNLGtIOynGzpDg9BfHJxRjI1SsJJk6_thumb.jpg",
       animation: null
     },
     ],

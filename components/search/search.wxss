@@ -31,7 +31,22 @@
   display: flex;
   flex-flow: row wrap;
   margin: 0 0 1em 0;
+  background-color: #ffe;
 }
+
+.cate {
+  padding: 0;
+  margin: 0.3ex 0.4ex;
+  color:#666;
+}
+
+.cate .divider {
+  width: 100%;
+  height: 0.2ex;
+  background-color: #444;
+}
+
+.cate .content {}
 
 .search-history {
   width: 100%;
