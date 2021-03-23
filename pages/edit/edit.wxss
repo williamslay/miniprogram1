@@ -1,1 +1,30 @@
-/* pages/edit/edit.wxss */
+.container {
+  height: 100%;
+  width: 100%;
+  padding: 1em;
+}
+
+.header {
+  height: 3em;
+  margin: 1em 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row-reverse nowrap;
+}
+
+.button {
+  border-radius: 1ex;
+  display: table;
+  padding: 1ex;
+  background-color: var(--ThemeColor);
+}
+
+.button .inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.subject {
+  height: 100%;
+}

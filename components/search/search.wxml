@@ -1,9 +1,9 @@
-<page-container overlay="{{false}}" round="{{true}}" close-on-slideDown="{{false}}" show="{{showSearch}}"
+<page-container overlay="{{showOver}}" round="{{true}}" close-on-slideDown="{{false}}" show="{{showSearch}}"
   bind:clickoverlay="exit" bind:leave="exit">
   <view class="search-container">
 
     <view class="search-result" wx:if="{{showResult}}">
-      <navigator wx:for="{{results}}" url="{{item.url}}" class="box">
+      <navigator wx:if="{{!showNo}}" wx:for="{{results}}" wx:key="results" url="{{item.url}}" class="box">
         <view class="left">
           <image wx:if="{{item.img != null}}" class="img" mode="aspectFill" src="{{item.img}}"></image>
         </view>
@@ -13,31 +13,45 @@
           <view class="excerpt"><text>{{item.excerpt}}</text></view>
         </view>
       </navigator>
-    </view>
-
-    <view class="result-title" wx:if="{{showNo}}">
-      <text>未找到您搜索的内容</text>
+      <view wx:if="{{showNo}}" class="no">
+        <view class="inner">这里是没有信息的荒野</view>
+      </view>
     </view>
 
     <view class="search-discover" wx:if="{{showDiscover}}">
-      <navigator wx:for="{{discover}}" url="{{item.url}}" class="box-small">
-          <text>{{item.title}}</text>
-      </navigator>
-    </view>
-
-    <view class="search-bar" wx:if="{{showBar}}">
-      <input placeholder="Search..." bindfocus="searchStart" bindinput="searchDiscover"></input>
-    </view>
-
-    <view class="search-recommend" wx:if="{{showRecommend}}">
-      <navigator wx:for="{{recommend}}" url="{{item.url}}" class="box">
+      <navigator wx:for="{{discover}}" wx:key="discover" url="{{item.url}}" class="water">
         <view class="left">
           <image wx:if="{{item.img != null}}" class="img" mode="aspectFill" src="{{item.img}}"></image>
         </view>
         <view class="right">
-          <view class="title"><text>{{item.title}}</text></view>
-          <view class="divider"></view>
-          <view class="excerpt"><text>{{item.excerpt}}</text></view>
+          <view class="inner">{{item.title}}</view>
+        </view>
+      </navigator>
+    </view>
+
+    <view class="search-cate">
+      <view class="capsule" wx:for="{{category}}" wx:key="category">{{item}}</view>
+    </view>
+    <view class="search-bar">
+      <view class="input">
+        <input placeholder="Search..." value="{{searchVal}}" bindfocus="onFocus" bindblur="onBlur" bindinput="onInput"
+          bindconfirm="onConfirm"></input>
+      </view>
+    </view>
+
+    <view class="search-history" wx:if="{{showHistory}}">
+      <view class="capsule" wx:for="{{history}}" wx:key="history" bindtap="openHistory">
+        {{item}}
+      </view>
+    </view>
+
+    <view class="search-recommend" wx:if="{{showRecommend}}">
+      <navigator wx:for="{{recommend}}" wx:key="recommend" url="{{item.url}}" class="water">
+        <view class="left">
+          <image wx:if="{{item.img != null}}" class="img" mode="aspectFill" src="{{item.img}}"></image>
+        </view>
+        <view class="right">
+          <view class="inner">{{item.title}}</view>
         </view>
       </navigator>
     </view>
@@ -45,6 +59,6 @@
   </view>
 </page-container>
 
-<view class="search-icon" onclick="expand" wx:if="{{showIcon}}">
+<view class="search-icon" onclick="onClick" wx:if="{{showIcon}}">
   <image width="100%" height="100%" src="" />
 </view>

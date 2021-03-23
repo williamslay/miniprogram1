@@ -1,2 +1,18 @@
-<!--pages/edit/edit.wxml-->
-<text>pages/edit/edit.wxml</text>
+<view class="container">
+  <view class="header">
+    <view class="button">
+      <view class="inner">发布</view>
+    </view>
+    <view class="subject">
+      <input placeholder="主题"></input>
+    </view>
+  </view>
+  <view class="main">
+    <editor></editor>
+  </view>
+  <view class="bottom">
+    <image class="icon"></image>
+    <image class="icon"></image>
+    <button class="button">发布</button>
+  </view>
+</view>

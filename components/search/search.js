@@ -10,7 +10,7 @@ Component({
   },
 
   data: {
-    history: [],
+    history: ["123", "123", "123"],
     results: [{
       title: 1,
       img: "/images/Edit.png",
@@ -63,22 +63,20 @@ Component({
       img: "/images/Edit.png",
       excerpt: 123,
       url: null
-    }, ],
+      },],
+    category:[""],
 
     showIcon: false,
     showSearch: false,
-    showBar: false,
-    showRecommend: false,
+    showHistory: true,
+    showRecommend: true,
     showDiscover: false,
     showResult: false,
     showNo: false,
+    searched: false,
 
-    options: {
-      span: 30,
-      column: 2,
-      gap: [10, 10],
-      rows: 2,
-    },
+    showOver: false,
+    searchVal: "",
   },
 
   lifetimes: {
@@ -86,100 +84,178 @@ Component({
       if (this.properties.mode == "icon") {
         this.setData({
           showIcon: true,
-        });
+          showOver: true
+        })
       }
       if (this.properties.mode == "page") {
         this.setData({
           showSearch: true,
-          showBar: true,
-          showRecommend: true,
+          showHistory: true,
+          showRecommend: true
         })
       }
     }
   },
   pageLifetimes: {
     show: function () {
-      if (this.properties.mode == "page")
+      if (this.properties.mode == "page") {
         this.setData({
-          showSearch: true,
+          showSearch: true
         })
+      }
+    },
+    hide: function () {
+      this.setData({
+        showSearch: false,
+        showRecommend: true,
+        showHistory: true,
+        showDiscover: false,
+        showResult: false,
+        searched: false
+      })
+      if (this.properties.mode == "icon") {
+        this.setData({
+          showIcon: true
+        })
+      }
     }
   },
 
   methods: {
     exit: function () {
+      this.setData({
+        showSearch: false,
+        showRecommend: true,
+        showHistory: true,
+        showDiscover: false,
+        showResult: false,
+        searched: false
+      })
       if (this.properties.mode == "icon") {
         this.setData({
-          showSearch: false,
           showIcon: true
         })
       }
       if (this.properties.mode == "page") {
-        this.setData({
-          showSearch: false,
+        wx.navigateBack({
+          delta: 1,
         })
       }
-      wx.navigateBack({
-        delta: 1,
-      });
     },
 
-    expand: function () {
+    onClick: function () {
       this.setData({
         showIcon: false,
         showSearch: true,
-        showBar: true,
-        showRecommend: true,
       })
     },
 
-    searchStart: function () {
+    onFocus: function (e) {
+      this.setData({
+        showRecommend: false,
+        showHistory: false,
+        showResult: false,
+        searched: false
+      })
       wx.request({
         url: `${app.globalData.baseURL}/wp/v2/search`,
+        data: {
+          type: "post",
+          search: e.detail.value
+        },
         success: (res) => {
           this.setData({
             discover: res.data,
-            showRecommend: false,
             showDiscover: true,
           })
         }
       })
     },
 
-    searchDiscover: function (e) {
-
+    onBlur: function () {
+      if (this.data.searched == false) {
+        if (this.properties.mode == "icon") {
+          this.setData({
+            showIcon: true,
+            showHistory: true,
+            showRecommend: true,
+            showDiscover: false,
+            showResult: false,
+            showSearch: false
+          })
+        }
+        if (this.properties.mode == "page") {
+          this.setData({
+            showIcon: false,
+            showHistory: true,
+            showRecommend: true,
+            showDiscover: false,
+            showResult: false,
+            showSearch: true
+          })
+        }
+      }
     },
 
-    searchNow: function (e) {
+    onInput: function (e) {
+      wx.request({
+        url: `${app.globalData.baseURL}/wp/v2/search`,
+        data: {
+          search: e.detail.value,
+          type: "post"
+        },
+        success: (res) => {
+          this.setData({
+            discover: res.data,
+          })
+        }
+      })
+    },
+
+    onConfirm: function (e) {
+      let {
+        history
+      } = this.data
       if (e.detail.value) {
+        this.setData({
+          searched: true
+        })
         history.push(e.detail.value);
         wx.request({
-          url: app.globalData.baseURL + "/wp/v2/search",
+          url: `${app.globalData.baseURL}/wp/v2/search`,
           data: {
-            search: history[0],
+            search: e.detail.value,
             type: "post"
           },
-          method: "GET",
-          dataType: "json",
-          success: "listResult",
-        });
-        while (history.length > 16)
-          history.pop();
+          success: (res) => {
+            if (res.data != '') {
+              this.setData({
+                results: res.data,
+                showResult: true,
+                showNo: false,
+                showDiscover: false,
+              })
+            } else {
+              this.setData({
+                showResult: true,
+                showNo: true,
+                showDiscover: false,
+              })
+            }
+          }
+        })
       }
+      while (history.length > 10)
+        history.pop()
+      this.setData({
+        history
+      })
     },
 
-    listResult: function (res) {
-      if (res.data.length > 0) {
-        result = res.data;
-        this.setData({
-          showRecommand: false,
-          showResult: true,
-        })
-      } else {
-        this.setData({
-          showNo: true,
-        })
-      }
-    },
+    openHistory: function (item) {
+      this.setData({
+        searchVal: item
+      })
+    }
   },
 })

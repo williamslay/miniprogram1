@@ -1,2 +1,6 @@
-<view class="bg"></view>
+<swiper indicator-dots="{{false}}" autoplay="{{true}}" class="bgs">
+  <swiper-item wx:for="{{images}}">
+    <image mode="aspectFill" src="{{item}}" class="bg"></image>
+  </swiper-item>
+</swiper>
 <search mode="page"></search>

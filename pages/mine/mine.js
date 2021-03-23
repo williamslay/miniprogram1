@@ -23,7 +23,7 @@ Page({
       zIndex: 2,
       opacity: 0.2,
       left: -20,
-      iamge: "../../images/comu1.jpg",
+      iamge: "https://gitee.com/williamslay/youpet/raw/master/image/comu1.jpg",
       animation: null
     },
     {
@@ -31,7 +31,7 @@ Page({
       zIndex: 4,
       opacity: 0.4,
       left: 0,
-      iamge: "../../images/comu2.jpg",
+      iamge: "https://gitee.com/williamslay/youpet/raw/master/image/comu2.jpg",
       animation: null
     },
     {
@@ -39,7 +39,7 @@ Page({
       zIndex: 6,
       opacity: 0.6,
       left:20,
-      iamge: "../../images/comu3.jpg",
+      iamge: "https://gitee.com/williamslay/youpet/raw/master/image/comu3.jpg",
       animation: null
     },
     {
@@ -47,7 +47,7 @@ Page({
       zIndex: 8,
       opacity: 1,
       left: 40,
-      iamge: "../../images/comu4.jpg",
+      iamge: "https://gitee.com/williamslay/youpet/raw/master/image/comu4.jpg",
       animation: null
     },
     {
@@ -55,7 +55,7 @@ Page({
       zIndex: 6,
       opacity: 0.6,
       left: 60,
-      iamge: "../../images/comu5.jpg",
+      iamge: "https://gitee.com/williamslay/youpet/raw/master/image/comu5.jpg",
       animation: null
     },
     {
@@ -63,7 +63,7 @@ Page({
       zIndex: 4,
       opacity: 0.4,
       left: 80,
-      iamge: "../../images/comu6.jpg",
+      iamge: "https://gitee.com/williamslay/youpet/raw/master/image/comu6.jpg",
       animation: null
     },
     {
@@ -71,7 +71,7 @@ Page({
       zIndex: 2,
       opacity: 0.2,
       left: 100,
-      iamge: "../../images/comu7.jpg",
+      iamge: "https://gitee.com/williamslay/youpet/raw/master/image/comu7.jpg",
       animation: null
     },
     ],
