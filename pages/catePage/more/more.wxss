@@ -1,0 +1,25 @@
+.Menu {
+  margin-top: 30rpx;
+  height: 300rpx;
+}
+
+.Menu .item {
+  width: 20%;
+  height: 108rpx;
+}
+
+.Menu_item {
+  display: flex;
+  flex-wrap: wrap;
+  height: 216rpx;
+  text-align: center;
+  font-size: 28rpx;
+
+}
+
+.Menu .item image {
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+  margin: auto;
+}

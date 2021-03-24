@@ -4,7 +4,7 @@
       <view class="inner">发布</view>
     </view>
     <view class="subject">
-      <input placeholder="主题..."></input>
+      <view class="inner"><input placeholder="主题..."></input></view>
     </view>
   </view>
   <view class="main">

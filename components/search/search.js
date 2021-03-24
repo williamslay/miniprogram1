@@ -71,6 +71,7 @@ Component({
     showHistory: true,
     showRecommend: true,
     showDiscover: false,
+    showCate: false,
     showResult: false,
     showNo: false,
     searched: false,
@@ -85,7 +86,7 @@ Component({
       if (this.properties.mode == "icon") {
         this.setData({
           showIcon: true,
-          showOver: true
+          showOver: true,
         })
       }
       if (this.properties.mode == "page") {
@@ -110,6 +111,7 @@ Component({
         showSearch: false,
         showRecommend: true,
         showHistory: true,
+        showCate: false,
         showDiscover: false,
         showResult: false,
         searched: false
@@ -128,6 +130,7 @@ Component({
         showSearch: false,
         showRecommend: true,
         showHistory: true,
+        showCate: false,
         showDiscover: false,
         showResult: false,
         searched: false
@@ -153,9 +156,8 @@ Component({
 
     onFocus: function (e) {
       this.setData({
-        showRecommend: false,
-        showHistory: false,
         showResult: false,
+        showCate: true,
         searched: false
       })
       wx.request({
@@ -180,6 +182,7 @@ Component({
             showIcon: true,
             showHistory: true,
             showRecommend: true,
+            showCate: false,
             showDiscover: false,
             showResult: false,
             showSearch: false
@@ -190,6 +193,7 @@ Component({
             showIcon: false,
             showHistory: true,
             showRecommend: true,
+            showCate: false,
             showDiscover: false,
             showResult: false,
             showSearch: true
@@ -249,6 +253,9 @@ Component({
       while (history.length > 10)
         history.pop()
       this.setData({
+        showRecommend: false,
+        showCate: false,
+        showHistory: false,
         history
       })
     },

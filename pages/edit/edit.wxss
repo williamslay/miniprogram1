@@ -5,7 +5,7 @@
 }
 
 .header {
-  height: 3em;
+  height: 2em;
   margin: 1ex 0;
   padding: 0;
   display: flex;
@@ -15,6 +15,10 @@
 .subject {
   border-radius: 1em;
   background-color: #eea;
+}
+
+.inner {
+  display: table-cell;
 }
 
 .button {
@@ -31,7 +35,7 @@
 }
 
 .main {
-  height: 70%;
+  height: 70vh;
   width: 100%;
   border-radius: 1em;
   margin: 1ex 0;

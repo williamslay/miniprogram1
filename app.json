@@ -17,7 +17,8 @@
     "pages/catePage/invitation/invitation",
     "pages/catePage/petBeauty/petBeauty",
     "pages/catePage/petHelth/peyHelth",
-    "pages/catePage/youpetStore/youpetStore"
+    "pages/catePage/youpetStore/youpetStore",
+    "pages/category/category"
   ],
   "window": {
     "backgroundTextStyle": "light",

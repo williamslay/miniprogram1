@@ -29,12 +29,12 @@
       </navigator>
     </view>
 
-    <view class="search-cate">
+    <view wx:if="{{showCate}}" class="search-cate">
       <view class="cate" wx:for="{{category}}" wx:key="category">
         <view class="content">{{item}}</view>
         <view class="divider"></view>
       </view>
-     
+
     </view>
     <view class="search-bar">
       <view class="input">
