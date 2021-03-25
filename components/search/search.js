@@ -160,17 +160,19 @@ Component({
         showCate: true,
         searched: false
       })
+      results = []
       wx.request({
-        url: `${app.globalData.baseURL}/wp/v2/search`,
-        data: {
-          type: "post",
-          search: e.detail.value,
-        },
+        url: `${app.globalData.baseURL}/api/threads?isEssence=true`,
         success: (res) => {
-          this.setData({
-            discover: res.data,
-            showDiscover: true,
-          })
+          var threads = res.data.data
+          for (var i = 0; i < this.data.length; ++i) {
+            wx.request({
+              url: `${app.globalData.baseURL}/api/threads/${threads[i].id}`,
+              success: (res) => {
+                results.push(res.data.id)
+              }
+            })
+          }
         }
       })
     },
@@ -203,16 +205,19 @@ Component({
     },
 
     onInput: function (e) {
+      results = []
       wx.request({
-        url: `${app.globalData.baseURL}/wp/v2/search`,
-        data: {
-          search: e.detail.value,
-          type: "post"
-        },
+        url: `${app.globalData.baseURL}/api/threads?isEssence=true`,
         success: (res) => {
-          this.setData({
-            discover: res.data,
-          })
+          var threads = res.data.data
+          for (var i = 0; i < this.data.length; ++i) {
+            wx.request({
+              url: `${app.globalData.baseURL}/api/threads/${threads[i].id}`,
+              success: (res) => {
+                results.push(res.data.id)
+              }
+            })
+          }
         }
       })
     },

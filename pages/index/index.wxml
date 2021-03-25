@@ -8,7 +8,7 @@
 <!-- 菜单栏 -->
 <swiper indicator-dots="{{false}}" class="categories" class='Menu'>
 	<swiper-item class="Menu_item" catchtouchmove="forbid">
-		<view wx:for="{{cateName}}" wx:key="index" class="item" bindtap="openCate" data-index="{{index}}">
+		<view wx:for="{{cateName}}" class="item" bindtap="openCate" data-index="{{index}}">
 			<image mode='aspectFit' src="{{cateImg[index]}}"></image>
 			<text>{{item}}</text>
 		</view>
@@ -20,14 +20,14 @@
 <view class='SwNews'>
 	<swiper indicator-dots="{{false}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}"
 		circular="{{true}}" bindchange="swiperChange">
-		<block wx:for="{{SwimgUrls}}" wx:key="index">
+		<block wx:for="{{SwimgUrls}}">
 			<swiper-item>
 				<image mode='widthFix' src="{{item}}" class="slide-image" width="100%" />
 			</swiper-item>
 		</block>
 	</swiper>
 	<view class="dots">
-		<block wx:for="{{SwimgUrls}}" wx:key="index">
+		<block wx:for="{{SwimgUrls}}">
 			<view class="dot{{index == current ? ' active' : ''}}"></view>
 		</block>
 	</view>

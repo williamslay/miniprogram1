@@ -193,7 +193,7 @@ Page({
       if (id == order[i]) {
         index = i;
         break;
-      }
+      };
     }
     if (index < that.data.iCenter) {
       for (var i = 0; i < that.data.iCenter - index; i++) {
@@ -223,7 +223,6 @@ Page({
   },
   //手指触发开始移动
   moveStart: function (e) {
-    console.log(e);
     var startX = e.changedTouches[0].pageX;
     this.setData({
       startX: startX
@@ -231,7 +230,6 @@ Page({
   },
   //手指触摸后移动完成触发事件
   moveItem: function (e) {
-    console.log(e);
     var that = this;
     var endX = e.changedTouches[0].pageX;
     this.setData({
@@ -245,6 +243,11 @@ Page({
     }
     if (moveX < -20) {
       this.right();
+    }
+    if (moveX == 0){
+      wx.navigateTo({
+        url: "../post/post"
+      });
     }
   },
 })

@@ -1,4 +1,4 @@
-<view>柚宠服务</view>
+<view class="service">柚宠服务</view>
 <swiper indicator-dots="{{false}}" class="categories" class='Menu'>
 	<swiper-item class="Menu_item" catchtouchmove="forbid">
 		<view wx:for="{{cateName1}}" wx:key="index" class="item" bindtap="openCate1" data-index1="{{index}}">
@@ -7,7 +7,7 @@
 		</view>
 	</swiper-item>
 </swiper>
-<view>分区版块</view>
+<view class="block">分区版块</view>
 <swiper indicator-dots="{{false}}" class="categories" class='Menu'>
 	<swiper-item class="Menu_item" catchtouchmove="forbid">
 		<view wx:for="{{cateName2}}" wx:key="index" class="item" bindtap="openCate2" data-index2="{{index}}">

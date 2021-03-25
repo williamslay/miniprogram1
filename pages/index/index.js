@@ -3,13 +3,16 @@ Page({
     _avatarUrl: null,
 
     SwimgUrls: [
-      '../../images/switch1.jpg',
-      '../../images/switch2.jpg',
-      '../../images/switch3.jpg'
+      'https://alxga.goho.co/storage/attachments/2021/03/24/U5eAd9J56aTFepBSTWRDnE6L4w7KiPqXXCHcDblT_thumb.jpg',
+      'https://alxga.goho.co/storage/attachments/2021/03/24/DT75f9fK1FfVIurtvwbHrTRBBT9MeFucLIDpP5eq_thumb.jpg',
+      'https://alxga.goho.co/storage/attachments/2021/03/24/t0Mr0TQEuBpRjRFKIpQudaoQG4acFZeKgrVtvUhU_thumb.jpg'
     ], //轮播图中图片
     current: 0,
 
     cateName: ['柚宠商城', '百科教程', '宠物健康', '宠物美容', '同城活动', '萌猫', '憨狗', '水族', '小型宠', '更多'], //显示名
+    // cateId: [
+
+    // ],
     cateImg: [
       '../../images/menu1.png',
       '../../images/menu2.png',
@@ -22,7 +25,7 @@ Page({
       '../../images/menu9.png',
       '../../images/menu10.png'
     ], //图片地址
-    cateUrl:[
+    cateUrl: [
       '../catePage/youpetStore/youpetStore',
       '../catePage/cyclopedia/cyclopedia',
       '../catePage/petHelth/peyHelth',
@@ -56,20 +59,20 @@ Page({
   onLoad: function () {
 
   },
-  forbid:function(){},
-  openCate:function(e){
-     var cateUrl=this.data.cateUrl;
-     var index=e.currentTarget.dataset.index;
-     wx.navigateTo({
-      url:cateUrl[index]
-    })    
+  forbid: function () {},
+  openCate: function (e) {
+    var cateUrl = this.data.cateUrl;
+    var index = e.currentTarget.dataset.index;
+    wx.navigateTo({
+      url: cateUrl[index]
+    })
   },
   acceptLogin: function (e) {
     const app = getApp();
     var that = this;
     if (e.detail.userInfo) {
       app.globalData.userInfo = e.detail.userInfo;
-      app.globalData.login=true;
+      app.globalData.login = true;
       that.setData({
         showLogin: false,
         _avatarUrl: e.detail.userInfo.avatarUrl
@@ -109,9 +112,9 @@ Page({
     const app = getApp();
     var that = this;
 
-    for (var i = 1; i < 59; i=i+1)
+    for (var i = 1; i < 59; i = i + 1)
       setInterval(function () {
-        if (app.globalData.userInfo != null){
+        if (app.globalData.userInfo != null) {
           that.setData({
             showLogin: false,
             _avatarUrl: app.globalData.userInfo.avatarUrl
@@ -149,7 +152,6 @@ Page({
       _type: 1
     })
     this.getHuaBanList()
-    this.onReachBottom()
   },
   getHuaBanList() {
     let {

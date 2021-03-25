@@ -5,20 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    cateName1: ['柚宠商城', '百科教程', '宠物健康', '宠物美容', '同城活动'], 
+    cateName1: ['柚宠商城', '百科教程', '宠物健康', '宠物美容', '同城活动','宠物护理','宠物用具','宠物医疗','宠物档案'], 
     cateImg1: [
       '../../../images/menu1.png',
       '../../../images/menu2.png',
       '../../../images/menu3.png',
       '../../../images/menu4.png',
-      '../../../images/menu5.png'
+      '../../../images/menu5.png',
+      '../../../images/menu13.png',
+      '../../../images/menu14.png',
+      '../../../images/menu15.png',
+      '../../../images/menu16.png',
     ],
     cateUrl1:[
       '../../catePage/youpetStore/youpetStore',
       '../../catePage/cyclopedia/cyclopedia',
       '../../catePage/petHelth/petHelth',
       '../../catePage/petBeauty/petBeauty',
-      '../../catePage/city/city'
+      '../../catePage/city/city',
+      '',
+      '',
+      '',
+      ''
     ],
     cateName2: ['萌猫', '憨狗', '水族', '小型宠','鸟类','爬宠'], 
     cateImg2: [

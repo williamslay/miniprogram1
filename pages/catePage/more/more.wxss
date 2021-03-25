@@ -23,3 +23,17 @@
   height: 80rpx;
   margin: auto;
 }
+.service{
+  display: block;
+  position: relative;
+  height:70rpx;
+  left:50rpx;
+  top:50rpx;
+}
+.block{
+  display: block;
+  position: relative;
+  height:70rpx;
+  left:50rpx;
+  top:50rpx;
+}

@@ -34,8 +34,8 @@
         <view class="content">{{item}}</view>
         <view class="divider"></view>
       </view>
-
     </view>
+
     <view class="search-bar">
       <view class="input">
         <input placeholder="Search..." value="{{searchVal}}" bindfocus="onFocus" bindblur="onBlur" bindinput="onInput"

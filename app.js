@@ -1,7 +1,7 @@
 App({
   globalData: {
     verChk: false,
-    baseURL: "https://honki.moe/wp-json",
+    baseURL: "https://alxga.goho.co",
     login: true,
     userInfo: null,
     Pet: {
