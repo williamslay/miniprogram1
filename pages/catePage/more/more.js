@@ -49,7 +49,7 @@ Page({
   onLoad: function (options) {
 
   },
-  forbid:function(){},
+    forbid:function(){},
   openCate1:function(e){
      var cateUrl=this.data.cateUrl1;
      var index=e.currentTarget.dataset.index1;
@@ -65,4 +65,4 @@ Page({
    })
  }
 
-})
+  })

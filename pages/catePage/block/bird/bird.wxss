@@ -1,4 +1,36 @@
 .header {
+  width: 100vw;
+  background-color: var(--ThemeColor);
+  padding: 3em 1em 1em 1em;
+}
+
+.title {
+  font-size: 2em;
+  font-weight: ;
+}
+
+.subcate {}
+
+.cate {}
+
+.cate .content {}
+
+.cate .content {}
+
+.cate .divider {}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.container.inner {
+  margin: 1em;
+}
+
+.header {
   width: 100%;
   display: flex;
   flex-flow: row wrap;

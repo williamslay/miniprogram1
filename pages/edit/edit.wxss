@@ -1,30 +1,67 @@
 .container {
   height: 100%;
   width: 100%;
-  padding: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+.container .inner {
+  margin: 1em;
 }
 
 .header {
-  height: 2em;
-  margin: 1ex 0;
+  margin: 1em 0;
   padding: 0;
   display: flex;
   flex-flow: row-reverse nowrap;
+  justify-content: space-between;
 }
 
 .subject {
+  width: 50%;
+  padding: 1ex 1em;
   border-radius: 1em;
-  background-color: #eea;
+  background-color: #ffd;
+  align-self: flex-end;
+  display: table;
 }
 
-.inner {
+.subject .inner {
   display: table-cell;
+  vertical-align: middle;
+}
+
+.main {
+  height: 70vh;
+  border-radius: 1em;
+  border: 0.5ex solid #eee;
+  margin: 1ex 0;
+  padding: 1em 1ex;
+}
+
+.main .inner {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.subject {
+  height: 100%;
+}
+
+.bottom {
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  justify-content: baseline;
+  margin: 1ex 0;
 }
 
 .button {
-  border-radius: 1ex;
+  margin: 0 1ex;
+  padding: 1ex 1em;
   display: table;
-  padding: 1ex;
+  border-radius: 1ex;
   background-color: var(--ThemeColor);
 }
 
@@ -34,31 +71,15 @@
   text-align: center;
 }
 
-.main {
-  height: 70vh;
-  width: 100%;
-  border-radius: 1em;
-  margin: 1ex 0;
-}
-
-.subject {
-  height: 100%;
-}
-
-.bottom {
-  display: flex;
-  flex-flow: row nowrap;
-  margin: 1ex 0;
-}
-
-.icon-outer {
+.icon {
+  margin: 0 1ex;
   height: 2em;
   width: 2em;
-  display: table;
-  align-content: center;
+  display: block;
 }
 
-.icon {
-  display: table-cell;
-  vertical-align: middle;
+.icon .inner {
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }

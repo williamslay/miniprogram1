@@ -36,36 +36,30 @@
     </view>
 
     <view class="answer-footer flex-wrp">
-        <view class="good flex-item">
-            <view class="good-bad">
-                <image src="../../images/good-bad.png"></image>
-            </view>
-            <view class="good-num">2.1k</view>
+        <view class="writeComment">
+           <image src="../../images/edit-pen.png" mode="heightFix"></image>
+           <view class="editor" bindtap="writeComment">
+               <text>评论...</text>
+           </view>
         </view>
-        <view class="operation-wrp flex-item">
-            <view class="operation flex-wrp flex-tab">
-                <view class="operation-btn flex-item">
-                    <image src="../../images/flag.png"></image>
-                    <text>没有帮助</text>
-                </view>
-                <view class="operation-btn flex-item">
-                    <image src="../../images/heart2.png"></image>
-                    <text>感谢</text>
-                </view>
-                <view class="operation-btn flex-item">
-                    <image src="../../images/star2.png"></image>
-                    <text>收藏</text>
-                </view>
-                <view class="operation-btn flex-item">
-                    <image src="../../images/comment.png"></image>
-                    <text>302</text>
-                </view>
-
+        <view class="operation">
+            <view class="comment">
+               <image src="../../images/comment.png"></image>
+             <text></text>
+            </view>
+            <view class="approve">
+               <image src="../../images/approve.png"></image>
+             <text></text>
+            </view>
+            <view class="favore">
+               <image src="../../images/star.png"></image>
+             <text></text>
+            </view>
+            <view class="more">
+               <image src="../../images/more.png"></image>
+             <text></text>
             </view>
         </view>
-
-
-
     </view>
 </view>
 

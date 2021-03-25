@@ -1,33 +1,38 @@
 <view class="header">
-  <view class="cate" wx:for="{{category}}" wx:key="category">
-    <view class="content">{{item}}</view>
-    <view class="divider"></view>
+  <view class="title"></view>
+  <view class="subcate">
+    <view class="cate" wx:for="{{subCate}}" wx:key="subcate">
+      <view class="content">{{item}}</view>
+      <view class="divider"></view>
+    </view>
   </view>
 </view>
-<view class="divider"></view>
-<view class="title">{{}}</view>
-<view class="top" wx:if="{{showDiscover}}">
-  <navigator wx:for="{{discover}}" wx:key="discover" url="{{item.url}}" class="water">
-    <view class="left">
-      <image wx:if="{{item.img != null}}" class="img" mode="aspectFill" src="{{item.img}}"></image>
+<view class="container">
+  <view class="inner">
+    <view class="top" wx:if="{{showDiscover}}">
+      <navigator wx:for="{{discover}}" wx:key="discover" url="{{item.url}}" class="water">
+        <view class="left">
+          <image wx:if="{{item.img != null}}" class="img" mode="aspectFill" src="{{item.img}}"></image>
+        </view>
+        <view class="right">
+          <view class="inner">{{item.title}}</view>
+        </view>
+      </navigator>
     </view>
-    <view class="right">
-      <view class="inner">{{item.title}}</view>
+    <view class="content" wx:if="{{showResult}}">
+      <navigator wx:if="{{!showNo}}" wx:for="{{results}}" wx:key="results" url="{{item.url}}" class="box">
+        <view class="left">
+          <image wx:if="{{item.img != null}}" class="img" mode="aspectFill" src="{{item.img}}"></image>
+        </view>
+        <view class="right">
+          <view class="title"><text>{{item.title}}</text></view>
+          <view class="divider"></view>
+          <view class="excerpt"><text>{{item.excerpt}}</text></view>
+        </view>
+      </navigator>
+      <view wx:if="{{showNo}}" class="no">
+        <view class="inner">这里是没有信息的荒野</view>
+      </view>
     </view>
-  </navigator>
-</view>
-<view class="content" wx:if="{{showResult}}">
-  <navigator wx:if="{{!showNo}}" wx:for="{{results}}" wx:key="results" url="{{item.url}}" class="box">
-    <view class="left">
-      <image wx:if="{{item.img != null}}" class="img" mode="aspectFill" src="{{item.img}}"></image>
-    </view>
-    <view class="right">
-      <view class="title"><text>{{item.title}}</text></view>
-      <view class="divider"></view>
-      <view class="excerpt"><text>{{item.excerpt}}</text></view>
-    </view>
-  </navigator>
-  <view wx:if="{{showNo}}" class="no">
-    <view class="inner">这里是没有信息的荒野</view>
   </view>
 </view>

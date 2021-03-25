@@ -40,17 +40,17 @@
   box-shadow: 0 1px 2px #bebebe;
 }
 .answerer .avatar {
-  flex: 1;
   width: 90rpx;
   height: 90rpx;
   display:inline-block;
+  position: absolute;
+  top:20rpx;
+  left:20rpx;  
+  border-radius:20%;
 }
 
 .answerer .avatar image {
   display: inline-block;
-  position: absolute;
-  top:20rpx;
-  left:20rpx;  
   width: 90rpx;
   height: 90rpx;
   border-radius:20%;
@@ -58,10 +58,10 @@
 .answerer .answerer-info{
   display:inline-block;
   text-align: left;
-  padding: 10rpx 0;
   line-height: 38rpx;
   position:relative;
-  top:10rpx;
+  top:20rpx;
+  left:130rpx;
 }
 .answerer .answerer-info text{
   display: block;
@@ -73,18 +73,22 @@
   font-size: 22rpx;
   color: #808080;
   line-height: 28rpx;
+  width: 380rpx;
 }
 .answerer .follow{
   display: inline-block;
+  position: relative;
+  left:150rpx;
+  bottom: 10rpx;
   padding: 15rpx 0;
   font-size: 22rpx;
+  border-radius: 10rpx;
 }
 .answerer .follow text{
   display: inline-block;
   padding: 15rpx 20rpx;
-  color: #40bcd0;
-  border: solid 2px #40bcd0;
-  border-radius: 6rpx;
+  color: #ffd662;
+  border: solid 2px #ffd662;
 }
 .answer-content{
   padding: 30rpx 40rpx;
@@ -102,54 +106,45 @@
 .answer-footer{
   position: fixed;
   bottom: 0;
-  height: 70rpx;
-  border-top: solid 1px #ebebeb;
+  height: 130rpx;
   background: #ffffff;
-  width: 670rpx;
-  padding: 20rpx 40rpx;
+  width: 100%;
 }
-.answer-footer .good{
-  flex: 1;
-  /*display: inline-block;*/
-  height: 40rpx;
-  border: solid 1px #d1d1d1;
-  border-radius: 3px;
-  padding: 10rpx 8rpx;
-  margin: 10rpx 0;
+.writeComment{
+  width:300rpx;
+  height:60rpx;
+  background-color: #eeeeee;
+  position: relative;
+  top:5rpx;
+  left:30rpx;
+  margin-top: 20rpx;
+  border:2px ;
+  border-radius:15px;
+  display:inline-block;
 }
-.answer-footer .good .good-bad{
+
+.writeComment image{
+  height:40rpx;
+  position: relative;
+  top:8rpx;
+  left:14rpx;
   display: inline-block;
 }
-.answer-footer .good image{
-  display: inline-block;
-  width: 38rpx;
-  height: 38rpx;
-  vertical-align: middle;
-}
-.answer-footer .good .good-num{
-  display: inline-block;
-  padding: 10rpx 4rpx;
-  /*font-size: 24rpx;*/
-}
-.answer-footer .operation-wrp{
-  flex: 5;
-}
-.answer-footer .operation{
-  justify-content: space-between;
-  padding: 0 0 0 60rpx;
-}
-.answer-footer .operation-btn{
-  flex: 1;
+
+.writeComment .editor{
+  position: relative;
+  height:40rpx;
+  width:260rpx;
   text-align: center;
+  font-size:10px;
+  display: inline-block;
 }
-.answer-footer .operation image{
-  display: block;
-  margin: 0 auto;
-  width: 50rpx;
-  height: 50rpx;
+
+.operation{
+  width:400rpx;
+  height:60rpx;
+  position: relative;
+  left:330rpx;
+  bottom:55rpx;
 }
-.answer-footer .operation-btn text{
-  display: block;
-  font-size: 14rpx;
-  color: #bebebe;
-}
+

@@ -1,11 +1,14 @@
-.bgs {
+.bg{
+  width:100vw;
+  height:100vh;
+  background-color: #ffd;
+}
+.s {
   height: 60vh;
   width: 100vw;
-  top: 0;
-  left: 0;
 }
 
-.bg {
+.si {
   height: 100%;
   width: 100%;
 }
