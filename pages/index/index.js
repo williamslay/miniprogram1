@@ -1,7 +1,7 @@
+const app = getApp()
 Page({
   data: {
     _avatarUrl: null,
-
     SwimgUrls: [
       'https://alxga.goho.co/storage/attachments/2021/03/24/U5eAd9J56aTFepBSTWRDnE6L4w7KiPqXXCHcDblT_thumb.jpg',
       'https://alxga.goho.co/storage/attachments/2021/03/24/DT75f9fK1FfVIurtvwbHrTRBBT9MeFucLIDpP5eq_thumb.jpg',
@@ -31,11 +31,11 @@ Page({
       '../catePage/petHelth/peyHelth',
       '../catePage/petBeauty/petBeauty',
       '../catePage/city/city',
-      '../catePage/block/cat/cat',
-      '../catePage/block/dog/dog',
-      '../catePage/block/fish/fish',
-      '../catePage/block/minipet/minipet',
-      '../catePage/more/more'
+      '../category/category?id=cat',
+      '../category/category?id=dog',
+      '../category/category?id=fish',
+      '../category/category?id=minipet',
+      '../category/category?id=more'
     ],
 
     interval: 3000,
@@ -54,12 +54,9 @@ Page({
     _type: 0,
 
     // 登录页面参数
-    showLogin: false,
+    showLogin: false
   },
-  onLoad: function () {
-
-  },
-  forbid: function () {},
+  forbid: function () { },
   openCate: function (e) {
     var cateUrl = this.data.cateUrl;
     var index = e.currentTarget.dataset.index;
@@ -67,40 +64,30 @@ Page({
       url: cateUrl[index]
     })
   },
-  acceptLogin: function (e) {
-    const app = getApp();
-    var that = this;
-    if (e.detail.userInfo) {
-      app.globalData.userInfo = e.detail.userInfo;
-      app.globalData.login = true;
-      that.setData({
-        showLogin: false,
-        _avatarUrl: e.detail.userInfo.avatarUrl
-      });
-      console.log(app.globalData.userInfo);
-      wx.showTabBar({
-        animation: true
-      });
-    } else {
-      //用户按了拒绝按钮
-      that.refuseLogin();
-    }
+  acceptLogin: function () {
+    var that = this
+    wx.getUserProfile({
+      desc: '用于完善资料',
+      success: (res) => {
+        app.globalData.userInfo = res.userInfo
+        wx.showTabBar()
+        that.setData({
+          showLogin: false,
+          _avatarUrl: res.userInfo.avatarUrl
+        })
+      },
+    })
   },
-  refuseLogin: function refuseLogin() {
-    var that = this;
+  refuseLogin: function () {
     wx.showModal({
-      title: '警告',
+      title: 'WARNING',
       content: '您点击了拒绝授权，将无法进入小程序，请授权之后再进入!!!',
       showCancel: false,
       confirmText: '返回授权',
-      success: function (res) {
-        if (res.confirm) {
-          that.setData({
-            showLogin: true,
-          })
-        }
+      complete: function () {
+        this.acceptLogin()
       }
-    });
+    })
   },
   swiperChange: function (e) {
     var that = this;
@@ -109,44 +96,22 @@ Page({
     })
   },
   onReady: function () {
-    const app = getApp();
-    var that = this;
-
-    for (var i = 1; i < 59; i = i + 1)
-      setInterval(function () {
-        if (app.globalData.userInfo != null) {
-          that.setData({
-            showLogin: false,
-            _avatarUrl: app.globalData.userInfo.avatarUrl
-          })
-        }
-        if (!app.globalData.login) {
-          wx.hideTabBar({
-            animation: true,
-          });
-          that.setData({
-            showLogin: true,
-          });
-        }
-      }, 1000 * i);
-    setInterval(function () {
-      if (app.globalData.userInfo === null) {
-        wx.hideTabBar({
-          animation: true,
-        });
-        that.setData({
-          showLogin: true,
-        });
-      } else {
-        that.setData({
-          showLogin: false,
-          _avatarUrl: app.globalData.userInfo.avatarUrl
-        })
-      }
-    }, 60000);
-
+    if (app.globalData.userInfo == null) {
+      wx.hideTabBar()
+      this.setData({
+        showLogin: true
+      })
+    }
+    else {
+      wx.showTabBar()
+      this.setData({
+        showLogin: false,
+        _avatarUrl: app.globalData.userInfo.avatarUrl
+      })
+    }
 
     this.data._type = 1
+
     this.setData({
       views: [],
       _type: 1

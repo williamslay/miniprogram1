@@ -55,13 +55,6 @@
         "text": "",
         "iconPath": "images/Mine.png",
         "selectedIconPath": "images/MineS.png"
-      },
-      {
-        "pagePath": "pages/catePage/block/bird/bird",
-        "text": "",
-        "iconPath": "images/Mine.png",
-        "selectedIconPath": "images/MineS.png"
-
       }
     ]
   }

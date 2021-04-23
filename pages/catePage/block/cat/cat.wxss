@@ -1,1 +1,114 @@
-/* pages/catePage/block/cat/cat.wxss */
+.header {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--ThemeColor);
+
+}
+
+.header .inner {
+  padding: 40px 1em 1ex 1em;
+}
+
+.title {
+  width: 60%;
+  font-size: 2.5em;
+  font-weight: 300;
+  overflow: hidden;
+}
+
+.subcate {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  overflow-x: scroll;
+}
+
+.cate {
+  padding: 0;
+  margin-right: 0.5ex;
+  color: #444;
+}
+
+.cate .content {}
+
+.cate .divider {
+  width: 100%;
+  height: 0.2ex;
+  background-color: #888;
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container .inner {
+  padding: 1ex 1ex 0 1ex;
+  margin: 0;
+  overflow-y: scroll;
+}
+
+.top {
+  padding: 1ex 1em;
+  border-radius: 1em;
+  background-color: #eee;
+  margin-bottom: 1ex;
+}
+
+.list {
+  overflow: hidden;
+  padding: 0.5ex;
+}
+
+.list image {
+  height: 1em;
+  max-width: 3em;
+  margin: 0 1em 0 0;
+}
+
+.list text {}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 8em;
+  border-bottom: 0.1ex solid #ddd;
+}
+
+.box .left {
+  margin: 0;
+  padding: 1ex;
+  width: 8em;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10%;
+}
+
+.box .right {
+  padding: 1ex;
+  width: 100%;
+}
+
+.box .title {
+  font-size: 1.2em;
+  height: 1.4em;
+  max-width: 75%;
+  overflow: hidden;
+}
+
+.box .divider {
+  background-color: #444;
+  width: 80%;
+  height: 0.1ex;
+}
+
+.box .excerpt {
+  font-size: 1em;
+  overflow: hidden;
+}

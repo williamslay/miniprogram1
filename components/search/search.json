@@ -1,6 +1,6 @@
 {
   "component": true,
-  "usingComponent":{
-    "waterfall":"/components/waterfall/"
+  "usingComponent": {
+    "waterfall": "/components/waterfall/"
   }
 }

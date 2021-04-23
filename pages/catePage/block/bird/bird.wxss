@@ -1,47 +1,36 @@
 .header {
-  width: 100vw;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   background-color: var(--ThemeColor);
-  padding: 3em 1em 1em 1em;
+
+}
+
+.header .inner {
+  padding: 40px 1em 1ex 1em;
 }
 
 .title {
-  font-size: 2em;
-  font-weight: ;
+  width: 60%;
+  font-size: 2.5em;
+  font-weight: 300;
+  overflow: hidden;
 }
 
-.subcate {}
-
-.cate {}
-
-.cate .content {}
-
-.cate .content {}
-
-.cate .divider {}
-
-.container {
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-}
-
-.container.inner {
-  margin: 1em;
-}
-
-.header {
+.subcate {
   width: 100%;
   display: flex;
-  flex-flow: row wrap;
-  margin: 0 0 1em 0;
+  flex-flow: row nowrap;
+  overflow-x: scroll;
 }
 
 .cate {
   padding: 0;
-  margin: 0.3ex 0.4ex 0 0.4ex;
+  margin-right: 0.5ex;
   color: #444;
 }
+
+.cate .content {}
 
 .cate .divider {
   width: 100%;
@@ -49,75 +38,59 @@
   background-color: #888;
 }
 
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container .inner {
+  padding: 1ex 1ex 0 1ex;
+  margin: 0;
+  overflow-y: scroll;
+}
+
 .top {
-  width: 100%;
-  display: flex;
-  flex-flow: row-reverse wrap-reverse;
-  justify-content: space-between;
-  align-content: flex-end;
+  padding: 1ex 1em;
+  border-radius: 1em;
+  background-color: #eee;
+  margin-bottom: 1ex;
 }
 
-.water {
-  width: 44%;
-  height: 3em;
-  margin: 0.5ex 0;
-  padding: 1ex;
-  background-color: #ffe;
-  border-radius: 1ex;
-  display: flex;
-  flex-direction: row;
-}
-
-.water .left {
-  width: 4em;
-}
-
-.water .right {
-  width: 100%;
-  height: 100%;
-  display: table;
-  padding: 0 0 0 1ex;
-}
-
-.water .right .inner {
-  display: table-cell;
-  vertical-align: middle;
-  height: 1.1em;
+.list {
   overflow: hidden;
+  padding: 0.5ex;
 }
 
-.content {
-  max-height: 1000rpx;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column-reverse;
+.list image {
+  height: 1em;
+  max-width: 3em;
+  margin: 0 1em 0 0;
 }
+
+.list text {}
 
 .box {
   display: flex;
   flex-direction: row;
-  margin: 0.5ex 0;
-  padding: 0;
   width: 100%;
-  height: 5em;
-  background-color: #ffe;
-  border-radius: 1ex;
+  height: 8em;
+  border-bottom: 0.1ex solid #ddd;
 }
 
 .box .left {
   margin: 0;
   padding: 1ex;
-  width: 5em;
+  width: 8em;
 }
 
 .img {
   height: 100%;
   width: 100%;
-  border-radius: 5%;
+  border-radius: 10%;
 }
 
 .box .right {
-  margin: 0;
   padding: 1ex;
   width: 100%;
 }
@@ -136,6 +109,6 @@
 }
 
 .box .excerpt {
-  font-size: 1ex;
+  font-size: 1em;
   overflow: hidden;
 }

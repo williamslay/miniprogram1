@@ -148,3 +148,67 @@
   bottom:55rpx;
 }
 
+.comment,.approve,.favore,.more{
+  position:relative;
+  left:20%;
+  height: 100%;
+  width:60rpx;
+  display: inline-block;
+  margin:0% 3%;
+}
+
+.comment image,.approve image,.favore image,.more image{
+  height:100%;
+  position: relative;
+}
+
+.main {
+  height: 25vh;
+  border-radius: 1em;
+  box-shadow: 0 0 1ex #ddd;
+  margin: 1ex 0;
+  padding: 1em 1ex;
+}
+
+.main .inner {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+}
+
+.bottom {
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  justify-content: baseline;
+  margin: 1ex 0;
+}
+
+.button {
+  margin: 0 1ex;
+  padding: 1ex 1em;
+  display: table;
+  border-radius: 1ex;
+  background-color: var(--ThemeColor);
+}
+
+.button .inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.icon {
+  margin: 0 1ex;
+  height: 2em;
+  width: 2em;
+  display: block;
+}
+
+.icon .inner {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  display: inline;
+}

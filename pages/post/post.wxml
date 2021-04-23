@@ -43,24 +43,43 @@
            </view>
         </view>
         <view class="operation">
-            <view class="comment">
-               <image src="../../images/comment.png"></image>
+            <view class="comment" bindtap="viewComment">
+               <image src="../../images/comment.png" mode="heightFix"></image>
              <text></text>
             </view>
             <view class="approve">
-               <image src="../../images/approve.png"></image>
+               <image src="../../images/approve.png" mode="heightFix"></image>
              <text></text>
             </view>
             <view class="favore">
-               <image src="../../images/star.png"></image>
+               <image src="../../images/star.png" mode="heightFix"></image>
              <text></text>
             </view>
             <view class="more">
-               <image src="../../images/more.png"></image>
+               <image src="../../images/more.png" mode="heightFix"></image>
              <text></text>
             </view>
         </view>
     </view>
 </view>
+
+<page-container show="{{showComment}}" round="{{true}}" bind:clickoverlay="refuseLogin" bind:leave="refuseLogin">
+    <view class="main">
+      <view class="inner">
+        <editor placeholder="评论千万条，友好第一条" style="height:auto; min-height:100px"></editor>
+      </view>
+    </view>
+    <view class="bottom">
+      <view class="button">
+        <view class="inner">发布</view>
+      </view>
+      <view class="icon">
+        <image class="inner" src="/images/at.png"></image>
+      </view>
+      <view class="icon">
+        <image class="inner" src="/images/photo.png"></image>
+      </view>
+    </view>
+</page-container>
 
 

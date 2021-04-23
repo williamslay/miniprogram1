@@ -5,11 +5,11 @@
         <view class="inner">发布</view>
       </view>
       <view class="subject">
-        <view class="inner"><input placeholder="主题..."></input></view>
+        <view class="inner"><input placeholder="标题..."></input></view>
       </view>
     </view>
     <view class="main">
-      <view class="inner" style="overflow:scroll">
+      <view class="inner">
         <editor placeholder="内容..." style="height:auto; min-height:450px"></editor>
       </view>
     </view>

@@ -1,56 +1,46 @@
 <view wx:if="{{app.globalData.verChk}}" left="0rpx" right="0rpx" width="100vw" height="100vh" display="block">
-	<text class="title">请升级微信版本</text>
+		<text class="title">请升级微信版本</text>
 </view>
-
 <!-- 导航栏 -->
 <Myheader avatarUrl="{{_avatarUrl}}" titleImg='../../images/YouPet.png'></Myheader>
-
 <!-- 菜单栏 -->
 <swiper indicator-dots="{{false}}" class="categories" class='Menu'>
-	<swiper-item class="Menu_item" catchtouchmove="forbid">
-		<view wx:for="{{cateName}}" class="item" bindtap="openCate" data-index="{{index}}">
-			<image mode='aspectFit' src="{{cateImg[index]}}"></image>
-			<text>{{item}}</text>
-		</view>
-	</swiper-item>
+		<swiper-item class="Menu_item" catchtouchmove="forbid">
+				<view wx:for="{{cateName}}" class="item" bindtap="openCate" data-index="{{index}}">
+						<image mode='aspectFit' src="{{cateImg[index]}}"></image>
+						<text>{{item}}</text>
+				</view>
+		</swiper-item>
 </swiper>
-
 <!-- 轮播 -->
-
 <view class='SwNews'>
-	<swiper indicator-dots="{{false}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}"
-		circular="{{true}}" bindchange="swiperChange">
-		<block wx:for="{{SwimgUrls}}">
-			<swiper-item>
-				<image mode='widthFix' src="{{item}}" class="slide-image" width="100%" />
-			</swiper-item>
-		</block>
-	</swiper>
-	<view class="dots">
-		<block wx:for="{{SwimgUrls}}">
-			<view class="dot{{index == current ? ' active' : ''}}"></view>
-		</block>
-	</view>
+		<swiper indicator-dots="{{false}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}" bindchange="swiperChange">
+				<block wx:for="{{SwimgUrls}}">
+						<swiper-item>
+								<image mode='widthFix' src="{{item}}" class="slide-image" width="100%" />
+						</swiper-item>
+				</block>
+		</swiper>
+		<view class="dots">
+				<block wx:for="{{SwimgUrls}}">
+						<view class="dot{{index == current ? ' active' : ''}}"></view>
+				</block>
+		</view>
 </view>
-
 <i-divider color="black" line-color="#ffd662" size="18" height="40">为您推荐</i-divider>
-
 <!-- 瀑布流 -->
 <view class="container">
-	<waterfall generic:selectable="image-view" views="{{ images }}" options="{{ options }}" />
+		<waterfall generic:selectable="image-view" views="{{ images }}" options="{{ options }}" />
 </view>
-
 <!-- 登录弹窗 -->
-<page-container show="{{showLogin}}" round="{{true}}" bind:clickoverlay="refuseLogin">
-	<view class="login-box">
-		<view class="logo">
-			<image mode='widthFix' src='/images/logo.jpg'></image>
+<page-container show="{{showLogin}}" round="{{true}}" bind:clickoverlay="refuseLogin" bind:leave="refuseLogin">
+		<view class="login-box">
+				<view class="logo">
+						<image mode='widthFix' src='/images/logo.jpg'></image>
+				</view>
+				<view class="txt">
+						<text class="title">留下我的足迹</text>
+				</view>
+				<button bind:tap="acceptLogin">微信授权</button>
 		</view>
-		<view class="txt">
-			<text class="title">留下我的足迹</text>
-		</view>
-		<button class="button" type="primary" open-type="getUserInfo" bindgetuserinfo="acceptLogin">
-			微信授权
-		</button>
-	</view>
 </page-container>

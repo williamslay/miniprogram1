@@ -22,6 +22,7 @@
   padding: 1ex 1em;
   border-radius: 1em;
   background-color: #ffd;
+  box-shadow: 0 0 1ex #ddd;
   align-self: flex-end;
   display: table;
 }
@@ -34,7 +35,7 @@
 .main {
   height: 70vh;
   border-radius: 1em;
-  border: 0.5ex solid #eee;
+  box-shadow: 0 0 1ex #ddd;
   margin: 1ex 0;
   padding: 1em 1ex;
 }
@@ -44,6 +45,7 @@
   width: 100%;
   margin: 0;
   padding: 0;
+  overflow-y: scroll;
 }
 
 .subject {

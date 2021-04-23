@@ -4,7 +4,7 @@
   background-color: #ffd;
 }
 .s {
-  height: 60vh;
+  height: 80vh;
   width: 100vw;
 }
 

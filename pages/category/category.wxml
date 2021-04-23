@@ -1,2 +1,35 @@
-<!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<view class="header">
+  <view class="inner">
+    <view class="title">{{cate.title}}</view>
+    <view class="subcate" wx:if="{{subCate.length>0}}">
+      <view class="cate" wx:for="{{subCate}}" wx:key="subcate" bindtap="">
+        <view class="content">{{item.title}}</view>
+        <view class="divider"></view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="container">
+  <view class="inner">
+    <view class="top" wx:if="{{top.length > 0}}">
+      <navigator wx:for="{{top}}" wx:key="top" url="{{item.url}}" class="list">
+        <image wx:if="{{item.img != null}}" mode="aspectFill" src="{{item.img}}"></image>
+        <text>{{item.title}}</text>
+      </navigator>
+    </view>
+    <navigator wx:for="{{content}}" wx:key="content" url="{{item.url}}" class="box">
+      <view class="left">
+        <image wx:if="{{item.img != null}}" class="img" mode="aspectFill" src="{{item.img}}"></image>
+      </view>
+      <view class="right">
+        <view class="title">
+          <text>{{item.title}}</text>
+        </view>
+        <view class="divider"></view>
+        <view class="excerpt">
+          <text>{{item.excerpt}}</text>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

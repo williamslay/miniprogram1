@@ -1,17 +1,23 @@
 const app = getApp()
 Page({
   data: {
-    cate: null,
-
-    subCate: [],
+    cate: {
+      title: null,
+      id: null
+    },
+    subCate: [{
+      id: null,
+      title: null
+    }],
     top: [],
     content: []
   },
   // onLoad: function (options) {
-  //   cate = options.cate
+  //   cate.id = options.cate
   //   wx.request({
   //     url: `${app.globalData.baseURL}/api/threads?filter[categoryId]=${cate}`,
   //     success: (res) => {
+  //       cate.title=res.data.
   //       var threads = res.data.data
   //       for (var idx = 0; threads.length >= 0; ++idx) {
   //         wx.reques({
