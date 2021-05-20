@@ -21,34 +21,34 @@ Page({
     top: [{
       title: "主子不开心了怎么办",
       img: "https://alxga.goho.co/storage/attachments/2021/03/27/bdXptzLAJmm7r90C8TiLwbw75p9NrrRme7Z4yvuq_thumb.jpg",
-      excerpt: "一只猫奴的日常",
-      url: null
+      excerpt: "首先你会对主子的情绪进行解读吗",
+      url: "../post/post"
     }, {
       title: "猫咪毛发保养",
       img: "https://alxga.goho.co/storage/attachments/2021/03/27/qKjBwalKWhm8NnWk38DFZcT358iLeHNbXX7hMJFt_thumb.jpg",
       excerpt: "如何让猫咪拥有入手即化的柔顺毛发",
-      url: null
+      url: "../post/post"
     }],
     content: [{
       title: "主子不开心了怎么办",
       img: "https://alxga.goho.co/storage/attachments/2021/03/27/bdXptzLAJmm7r90C8TiLwbw75p9NrrRme7Z4yvuq_thumb.jpg",
-      excerpt: "一只猫奴的日常",
-      url: null
+      excerpt: "首先你会对主子的情绪进行解读吗",
+      url: "../post/post"
     }, {
       title: "猫咪毛发保养",
       img: "https://alxga.goho.co/storage/attachments/2021/03/27/qKjBwalKWhm8NnWk38DFZcT358iLeHNbXX7hMJFt_thumb.jpg",
       excerpt: "如何让猫咪拥有入手即化的柔顺毛发",
-      url: null
+      url: "../post/post"
     }, {
       title: "背着主子去踏青",
       img: "https://alxga.goho.co/storage/attachments/2021/03/27/pcxur4nWAw7qjoluQBtBa0Sdi8MfhJxA0iTDM3X1_thumb.jpg",
       excerpt: "运输箱选购指南",
-      url: null
+      url: "../post/post"
     }, {
       title: "皇上的寝殿",
       img: "https://alxga.goho.co/storage/attachments/2021/03/27/2VpzmWYuQbHq0luSUZdZeRiT0oJQjpdm8R9t9PlX_thumb.png",
       excerpt: "让猫咪对纸箱不屑一顾",
-      url: null
+      url: "../post/post"
     }]
   },
   // onLoad: function (options) {

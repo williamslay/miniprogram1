@@ -1,69 +1,138 @@
-<!--answer.wxml-->
+<!-- answer.wxml -->
 <view class="container">
-    <view class="question" bindtap="toQuestion">
-        <text class="question-title">选择 Kindle 而不是纸质书的原因是什么？</text>
+  <view class="question" bindtap="toQuestion">
+    <text class="question-title">主子不开心了怎么办？</text>
+  </view>
+  <view class="answerer-wrp">
+    <view class="bg-half"></view>
+    <view class="answerer flex-wrp">
+      <view class="avatar flex-item">
+        <image src="../../images/XiaoBai.jpg" mode="heightFix"></image>
+      </view>
+      <view class="answerer-info flex-item">
+        <text class="answerer-name">Rebecca</text>
+        <text class="answerer-des">拥有一只十岁的小黑猫！！！</text>
+      </view>
+      <view class="follow flex-item">
+        <text>十 关注</text>
+      </view>
     </view>
-    <view class="answerer-wrp">
-        <view class="bg-half"></view>
-        <view class="answerer flex-wrp">
-            <view class="avatar flex-item">
-                <image src="../../images/XiaoBai.jpg" mode="heightFix"></image>
-            </view>
-            <view class="answerer-info flex-item">
-                <text class="answerer-name">Rebecca</text>
-                <text class="answerer-des">WEB前端*不靠谱天气预报员*想做代码小仙女</text>
-            </view>
-            <view class="follow flex-item">
-                <text>十 关注</text>
-            </view>
-        </view>
+  </view>
+  <view class="answer-content">
+    <text>
+      首先你会对主子的情绪进行解读吗？
+😻开心
+开心的喵会发出【呼噜呼噜】的声响，这是有满足感、放松、想撒娇或者有所求的表现
+（呼噜声有时也可能是不舒服或紧张，看情况来区分）
+
+
+😽想要撒娇
+1.在你身上或者附近的毛毯等踩奶，幼猫时期很早离开母猫的猫咪常有这个举动。有你在就像猫妈妈在，很安心
+2.主动蹭你 求摸摸，求喂食~ 或单纯想在你身上沾上气味，表达想独占你的情绪~
+3.PP对着你 竖尾巴
+这个动作也是撒娇！幼猫时期母猫会舔舐幼猫PP以刺激排xie，猫对这样的举动难以忘怀，以此动作表达对你的信任喜欢❤️
+
+😾生气！
+1.飞机耳（准备攻击）
+2.哈气 胡须上扬（我生气了‼️）
+3.全身炸毛 弓背 尾巴垂下（让自己看起来较大 威吓敌人！）
+
+🙀害怕！
+1.压低身体蜷缩，尾巴夹在后腿之间（让自己看起来较小 随时准备逃跑）
+2.上半身压低➕下半身抬高 炸毛 （跟生气炸毛不同，飞机耳、上半身向后退 虽然在威吓敌人，但喵内心很害怕）
+
+😿有压力
+1.过度舔毛 【过度舔舐同一部位】
+2.乖巧的猫突然开始咬人、飞扑？ 它应该对你有不满
+3.乱尿乱拉 一个可能的原因也是压力过大
+4.经常跑酷 也可能因为猫累积了一些压力
+
+😹不安
+1.睁着眼睛打哈欠👀 它不是困了，睁着眼睛对周围警戒，打哈欠为了缓解不安…
+2.舔毛、舔鼻子 猫有些紧张，用舔毛来安定情绪（猫：这人总盯着我看 不知道做什么先舔舔鼻子吧…）
+3.磨爪！也是在稳定情绪及兴奋感，消除压力
+
+ 
+😼放松
+1.香盒坐姿
+前爪弯曲在身体下，这样坐说明猫猫安心舒适，不能立马站起来也无所谓~（但还是要观察周围 所以头会抬高）
+2.老大爷坐姿
+像人类一样张开腿…这个坐姿也不能迅速起身，代表猫很大意，觉得放松安全（可能它们是理毛时发现了这样坐“很舒服”~）
+3.仰躺睡姿
+露出肚子💤，代表安心和对你完全信任~
+4.出神地眯眼
+与你四目相交时闭眼， 也是安心放松的表现哦
+相对于野猫，家猫面临的危险较少，因此经常会摆出放松的姿势。
+
+--------------------------------------------------
+当主子不高兴的时候，铲屎官应当做到如下这几点，方能让不高兴的主子渐渐安静下来。
+
+第一点：食物道歉法
+
+主子生气了，一般情况下都是不愿意和我们接触，总是自己躲在一个角落里，所以这个时候我们寻找不到主子，却又想不让它们生气，只有一个办法，那就是用食物勾引它们出来，最好用的办法，就是这个办法了，食物道歉，猫主子比狗狗还要贪吃，所以猫主子在食物面前，它们的气会消得特别的快，也就是说你只需要拿出，它最喜欢的东西来，然后和它道歉，这样它就会原谅你了。
+
+
+不过需要注意的一点就是，如果主子不高兴时，铲屎官都用零食来让它们安静，这就会给主子学到一个错误的认知，它们会觉得唯有自己不高兴的时候才能得到更多的零食，因此就会故意不高兴。
+
+主子的学习能力并不差，铲屎官可别把不好的事情也让它们学会了。
+
+
+第二点：对症下药法
+
+有些时候，我们明明没有做错什么，可为什么猫主子还是会“生气”，发小脾气呢？那么我们只好找一找到底是我们哪里让它们生气了，以便对症下药，猫主子的生气的原因有很多种，比如：最近猫砂是不是没有清理？是不是你突然换了一种新的猫砂，所以猫咪不习惯了？是不是猫咪吃饭的食盆脏了……然后对应地解决这些问题。
+
+
+找出具体原因，对症下药，才能让主子感到开心哦~
+
+第三点：娱乐游戏法
+
+猫主子若只是轻微不高兴的话（也就是不会因为铲屎官的靠近而跑开），铲屎官可以用玩具去逗逗它们。
+
+猫主子虽然不会立马玩玩具，但只要它们接受了玩具，比如咬着玩具不放、撕咬玩具、盯着玩具，那么它们不高兴的情绪就会慢慢地平复下来。
+
+铲屎官这时不要走开，而是在一旁默默看着，因为平复了心情的猫咪会不由自主地跑到铲屎官面前喵喵叫地撒娇，所以铲屎官就陪它们玩一玩吧。
+
+
+第四点：哄猫神器法
+
+这一点可以说是绝招了，那就是使用猫薄荷，要知道无论猫咪是生气，难过，开心，都是无法拒绝猫薄荷的诱惑的，所以如果家里的猫咪很生气，这个时候我们能做的，只有给它们一些猫薄荷，好让它们享受享受，只要等着它们在猫薄荷的海洋里遨游之后，它们大多数都是不会想着之前生气的事情的，所以如果害怕猫咪生气，家里最好备着点猫薄荷哦。
+
+
+没错，猫主子就是这样爱生气但是又不记仇的可爱小东西。虽然经常会生气炸毛，但是却是很容易哄好的，是不是很可爱呀？
+    </text>
+    <image src="https://alxga.goho.co/storage/attachments/2021/03/27/bdXptzLAJmm7r90C8TiLwbw75p9NrrRme7Z4yvuq.jpg" mode="widthFix"></image>
+  </view>
+  <view class="answer-footer flex-wrp">
+    <view class="writeComment" bindtap="writeComment">
+      <image src="../../images/edit-pen.png" mode="heightFix"></image>
+      <view class="editor">
+        <text>评论...</text>
+      </view>
     </view>
-    <view class="answer-content">
-        <text>难道不明白纸质书更贵啊！！！
-
-            若觉得kindle更贵，我觉得要么阅读量太少，那确实没有买kindle的必要。要么买的都是盗版的纸质书？我不清楚不加以评论。。。
-
-            另外，用kindle看小说的怎么真心不懂了。题主不看小说么？难道题主拿来看教科书还是技术文档？还是题主觉得小说就是小时代内样的？（对小时代没偏见，尊重多样性）
-
-            而且纸质书搬起来真心困难啊！当初毕业带不回来，忍痛卖了不少好桑心！
-
-            碎片时间阅读总不能天天背着一本书吧，那么占地方。
-
-            看到描述最后一段，感觉有骗答案的嫌疑
-
-        </text>
-        <image src="https://alxga.goho.co/storage/attachments/2021/03/23/IFJ8eTGkbWC159TpotNqUGQkEHygN6ZJ7EWTMgaF_thumb.jpg"></image>
+    <view class="operation">
+      <view class="comment" bindtap="viewComment">
+        <image src="../../images/comment.png" mode="heightFix"></image>
+        <text></text>
+      </view>
+      <view class="approve" bindtap="Approve">
+        <image src="../../images/approved.png" mode="heightFix" wx:if="{{approved}}"></image>
+        <image wx:else src="../../images/approve.png" mode="heightFix"></image>
+        <text></text>
+      </view>
+      <view class="favore" bindtap="Favor">
+        <image src="../../images/stared.png" mode="heightFix" wx:if="{{favored}}"></image>
+        <image wx:else src="../../images/star.png" mode="heightFix"></image>
+        <text></text>
+      </view>
+      <view class="more" bindtap="More">
+        <image src="../../images/more.png" mode="heightFix"></image>
+        <text></text>
+      </view>
     </view>
-
-    <view class="answer-footer flex-wrp">
-        <view class="writeComment">
-           <image src="../../images/edit-pen.png" mode="heightFix"></image>
-           <view class="editor" bindtap="writeComment">
-               <text>评论...</text>
-           </view>
-        </view>
-        <view class="operation">
-            <view class="comment" bindtap="viewComment">
-               <image src="../../images/comment.png" mode="heightFix"></image>
-             <text></text>
-            </view>
-            <view class="approve">
-               <image src="../../images/approve.png" mode="heightFix"></image>
-             <text></text>
-            </view>
-            <view class="favore">
-               <image src="../../images/star.png" mode="heightFix"></image>
-             <text></text>
-            </view>
-            <view class="more">
-               <image src="../../images/more.png" mode="heightFix"></image>
-             <text></text>
-            </view>
-        </view>
-    </view>
+  </view>
 </view>
-
-<page-container show="{{showComment}}" round="{{true}}" bind:clickoverlay="refuseLogin" bind:leave="refuseLogin">
+<page-container show="{{showPage}}" round="{{true}}">
+  <view wx:if="{{showComment}}">
     <view class="main">
       <view class="inner">
         <editor placeholder="评论千万条，友好第一条" style="height:auto; min-height:100px"></editor>
@@ -80,6 +149,74 @@
         <image class="inner" src="/images/photo.png"></image>
       </view>
     </view>
+  </view>
+  <view class="morePage" wx:if="{{showMore}}">
+    <view class="main">
+      <view class="inner">
+        <view>
+          <view class="message">
+          <image class="inner" src="/images/message.png" mode="widthFix"></image>
+          <text>私信</text>
+          </view>
+          <view class="report">
+          <image class="inner" src="/images/alert.png" mode="widthFix"></image>
+          <text>举报</text>
+          </view>
+          <view class="block-user">
+          <image class="inner" src="/images/block-user.png" mode="widthFix"></image>
+          <text>屏蔽</text>
+          </view>
+        </view>
+        <view>
+          <view class="posts">
+          <image class="inner" src="/images/posts.png" mode="widthFix"></image>
+          <text>转发</text>
+          </view>
+          <view class="link">
+          <image class="inner" src="/images/links.png" mode="widthFix"></image>
+          <text>链接</text>
+          </view>
+          <view class="share">
+          <image class="inner" src="/images/share.png" mode="widthFix"></image>
+          <text>分享</text>
+          </view>
+          <view class="qq">
+          <image class="inner" src="/images/qq.png" mode="widthFix"></image>
+          <text>QQ</text>
+          </view>
+          <view class="wechat">
+          <image class="inner" src="/images/wechat.png" mode="widthFix"></image>
+          <text>微信</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view wx:if="{{show_viewComment}}">
+   <view class="popupComment">
+     <view class="inner">
+       <view class="comment1">
+         <View class="majorComment">
+           <image class="commentAvatar" src="..."></image>
+           <text>好呀！！！</text>
+           <view class="commentButton">
+            <image class="commentReply" src="..."></image>
+            <image class="commentApprove" src="..."></image>
+           </view>
+         </View>
+         <View class="minorComment">
+          <image class="commentAvatar" src="..."></image>
+           <text>好呀！！！</text>
+           <view class="commentButton">
+            <image class="commentReply" src="..."></image>
+            <image class="commentApprove" src="..."></image>
+           </view>
+         </View>
+       </view>
+       <view class="comment2"></view>
+       <view class="comment3"></view>
+       <view class="comment4"></view>
+     </view>
+   </view>
+  </view> -->
 </page-container>
-
-

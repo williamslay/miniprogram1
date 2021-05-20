@@ -33,13 +33,13 @@
 		<waterfall generic:selectable="image-view" views="{{ images }}" options="{{ options }}" />
 </view>
 <!-- 登录弹窗 -->
-<page-container show="{{showLogin}}" round="{{true}}" bind:clickoverlay="refuseLogin" bind:leave="refuseLogin">
+<page-container show="{{showLogin}}" round="{{true}}" bind:leave="leaveLogin">
 		<view class="login-box">
 				<view class="logo">
 						<image mode='widthFix' src='/images/logo.jpg'></image>
 				</view>
 				<view class="txt">
-						<text class="title">留下我的足迹</text>
+						<text>留下我的足迹</text>
 				</view>
 				<button bind:tap="acceptLogin">微信授权</button>
 		</view>

@@ -9,14 +9,17 @@
     </view>
   </view>
 </view>
+<view class="top" wx:if="{{top.length > 0}}">
+  <view class="halfBg"></view>
+  <view class="inner">
+    <navigator wx:for="{{top}}" wx:key="top" url="{{item.url}}" class="list">
+      <image wx:if="{{item.img != null}}" mode="aspectFill" src="{{item.img}}"></image>
+      <text>{{item.title}}</text>
+    </navigator>
+  </view>
+</view>
 <view class="container">
   <view class="inner">
-    <view class="top" wx:if="{{top.length > 0}}">
-      <navigator wx:for="{{top}}" wx:key="top" url="{{item.url}}" class="list">
-        <image wx:if="{{item.img != null}}" mode="aspectFill" src="{{item.img}}"></image>
-        <text>{{item.title}}</text>
-      </navigator>
-    </view>
     <navigator wx:for="{{content}}" wx:key="content" url="{{item.url}}" class="box">
       <view class="left">
         <image wx:if="{{item.img != null}}" class="img" mode="aspectFill" src="{{item.img}}"></image>

@@ -14,27 +14,13 @@
   width: 50%;
 }
 
-rich-text {
-  width: 100%;
-}
-
 .txt {
   width: 100%;
-  font-size: 1rem;
+  font-size: large;
   line-height: 1.4em;
-  text-align: justify;
-  margin: 40rpx 40rpx;
-}
-
-.txt .title {
-  font-size: 2em;
+  margin: 40rpx 0;
   text-align: center;
   color: #444444;
-  margin: 0.5em 0 0.5em 0;
-}
-
-.txt .normal {
-  color: #000000;
 }
 
 .button {

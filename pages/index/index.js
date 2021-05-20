@@ -35,7 +35,7 @@ Page({
       '../category/category?id=dog',
       '../category/category?id=fish',
       '../category/category?id=minipet',
-      '../category/category?id=more'
+      '../catePage/more/more'
     ],
 
     interval: 3000,
@@ -76,7 +76,16 @@ Page({
           _avatarUrl: res.userInfo.avatarUrl
         })
       },
+      fail: () => { this.refuseLogin() }
     })
+  },
+  leaveLogin: function () {
+    if (this.data.showLogin == true) {
+      this.refuseLogin()
+      this.setData({
+        showLogin: true
+      })
+    }
   },
   refuseLogin: function () {
     wx.showModal({

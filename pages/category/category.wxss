@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   background-color: var(--ThemeColor);
-
 }
 
 .header .inner {
@@ -38,23 +37,28 @@
   background-color: #888;
 }
 
-.container {
+.top {
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
-.container .inner {
-  padding: 1ex 1ex 0 1ex;
-  margin: 0;
-  overflow-y: scroll;
+.halfBg {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 60rpx;
+  background-color: var(--ThemeColor);
 }
 
-.top {
+.top .inner{
+  top: -60rpx;
+  position: relative;
   padding: 1ex 1em;
   border-radius: 1em;
-  background-color: #eee;
-  margin-bottom: 1ex;
+  background-color: #fff;
+  margin: 1ex 1em;
+  box-shadow: 0 0 1ex #ddd;
 }
 
 .list {
@@ -69,6 +73,18 @@
 }
 
 .list text {}
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container .inner {
+  padding: 1ex 1ex 0 1ex;
+  margin: 0;
+  overflow-y: scroll;
+}
 
 .box {
   display: flex;
