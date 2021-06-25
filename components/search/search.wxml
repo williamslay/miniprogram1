@@ -1,62 +1,72 @@
-<page-container overlay="{{showOver}}" round="{{true}}" close-on-slideDown="{{false}}" show="{{showSearch}}" bind:clickoverlay="exit" bind:leave="exit">
-  <view class="search-container">
-    <view class="search-result" wx:if="{{showResult}}">
-      <navigator wx:if="{{!showNo}}" wx:for="{{results}}" wx:key="results" url="{{item.url}}" bind:tap="navclk" class="box">
-        <view class="left">
-          <image wx:if="{{item.img != null}}" class="img" mode="aspectFill" src="{{item.img}}"></image>
-        </view>
-        <view class="right">
-          <view class="title">
-            <text>{{item.title}}</text>
+<view wx:if='{{showIcon}}' class='icon' onClick='iconClk'>
+  <image width='100%' height='100%' src='' />
+</view>
+<!--  -->
+<page-container show='{{showPage}}' overlay='{{showIcon}}' round='{{true}}' close-on-slideDown='{{showIcon}}'
+  bind:clickoverlay='exitOvlay' bind:leave='exit'>
+  <view class='container'>
+    <!--  -->
+    <view wx:if='{{showResult}}' class='result'>
+      <view wx:if='{{results.empty()}}' class='nores'>
+        <view class='inner'>这里是没有信息的荒野</view>
+      </view>
+      <view wx:else>
+        <navigator wx:for='{{results}}' wx:key='results' url='{{item.url}}' bind:tap='navClk' class='box'>
+          <view class='left'>
+            <image wx:if='{{item.img != null}}' class='img' mode='aspectFill' src='{{item.img}}' />
           </view>
-          <view class="divider"></view>
-          <view class="excerpt">
-            <rich-text>{{item.excerpt}}</rich-text>
+          <view class='right'>
+            <view class='title'>
+              <text>{{item.title}}</text>
+            </view>
+            <view class='divider'></view>
+            <view class='excerpt'>
+              <rich-text>{{item.excerpt}}</rich-text>
+            </view>
           </view>
-        </view>
-      </navigator>
-      <view wx:if="{{showNo}}" class="no">
-        <view class="inner">这里是没有信息的荒野</view>
+        </navigator>
       </view>
     </view>
-    <view class="search-discover" wx:if="{{showDiscover}}">
-      <navigator wx:for="{{discover}}" wx:key="discover" url="{{item.url}}" bind:tap="navclk" class="water">
-        <view class="left">
-          <image wx:if="{{item.img != null}}" class="img" mode="aspectFill" src="{{item.img}}"></image>
+    <!--  -->
+    <view class='discover' wx:if='{{showDiscover}}'>
+      <navigator wx:for='{{discover}}' wx:key='discover' url='{{item.url}}' bind:tap='navClk' class='water'>
+        <view class='left'>
+          <image wx:if='{{item.img !=null}}' class='img' mode='aspectFill' src='{{item.img}}'></image>
         </view>
-        <view class="right">
-          <view class="inner">{{item.title}}</view>
+        <view class='right'>
+          <view class='inner'>{{item.title}}</view>
         </view>
       </navigator>
     </view>
-    <view wx:if="{{showCate}}" class="search-cate">
-      <view class="cate" wx:for="{{category}}" wx:key="category" bindtap="openCate">
-        <view class="content">{{item.title}}</view>
-        <view class="divider"></view>
+    <!--  -->
+    <view wx:if='{{showCate}}' class='cate-o'>
+      <view class='cate' wx:for='{{category}}' wx:key='category' bindtap='openCate'>
+        <view class='content'>{{item.title}}</view>
+        <view class='divider'></view>
       </view>
     </view>
-    <view class="search-bar">
-      <view class="input">
-        <input placeholder="Search..." value="{{searchVal}}" bindfocus="onFocus" bindblur="onBlur" bindinput="onInput" bindconfirm="onConfirm"></input>
+    <!--  -->
+    <view class='bar'>
+      <view class='input'>
+        <input placeholder='Search...' value='{{searchVal}}' bindfocus='barFoc' bindblur='barBlr' bindinput='barIpt'
+          bindconfirm='barCfm'></input>
       </view>
     </view>
-    <view class="search-history" wx:if="{{showHistory}}">
-      <view class="capsule" wx:for="{{history}}" wx:key="history" bindtap="openHistory">
-        {{item}}
-      </view>
+    <!--  -->
+    <view class='history' wx:if='{{showHistory && !history.empty()}}'>
+      <view class='capsule' wx:for='{{history}}' wx:key='history' bindtap='setHty'>{{item}}</view>
     </view>
-    <view class="search-recommend" wx:if="{{showRecommend}}">
-      <navigator wx:for="{{recommend}}" wx:key="recommend" url="{{item.url}}" bind:tap="navclk" class="water">
-        <view class="left">
-          <image wx:if="{{item.img != null}}" class="img" mode="aspectFill" src="{{item.img}}"></image>
+    <!--  -->
+    <view class='recommend' wx:if='{{showRecommend}}'>
+      <navigator wx:for='{{recommend}}' wx:key='recommend' url='{{item.url}}' bind:tap='navClk' class='water'>
+        <view class='left'>
+          <image wx:if='{{item.img !=null}}' class='img' mode='aspectFill' src='{{item.img}}'></image>
         </view>
-        <view class="right">
-          <view class="inner">{{item.title}}</view>
+        <view class='right'>
+          <view class='inner'>{{item.title}}</view>
         </view>
       </navigator>
     </view>
+    <!--  -->
   </view>
 </page-container>
-<view class="search-icon" onclick="onClick" wx:if="{{showIcon}}">
-  <image width="100%" height="100%" src="" />
-</view>

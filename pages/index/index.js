@@ -4,8 +4,8 @@ Page({
     _avatarUrl: null,
     SwimgUrls: [
       'https://alxga.goho.co/storage/attachments/2021/03/24/U5eAd9J56aTFepBSTWRDnE6L4w7KiPqXXCHcDblT_thumb.jpg',
-      'https://alxga.goho.co/storage/attachments/2021/03/24/DT75f9fK1FfVIurtvwbHrTRBBT9MeFucLIDpP5eq_thumb.jpg',
-      'https://alxga.goho.co/storage/attachments/2021/03/24/t0Mr0TQEuBpRjRFKIpQudaoQG4acFZeKgrVtvUhU_thumb.jpg'
+      'https://alxga.goho.co/storage/attachments/2021/06/06/RqjxLtS0aB6p3kMnYf8awjXCdRmUHv1dpqarXoA6_thumb.jpeg',
+      'https://alxga.goho.co/storage/attachments/2021/06/06/UkAmBdYtWTAbmXhEAABiLl7JUlGDNQyz3waaGJLo.jpg'
     ], //轮播图中图片
     current: 0,
 
@@ -141,12 +141,12 @@ Page({
         'x-requested-with': 'XMLHttpRequest',
       },
       success: (res) => {
-        res.data.pins.map((v) => {
-          images.push({
-            url: `https://hbimg.huabanimg.com/${v.file.key}_/fw/480/format/webp`,
-            title: v.raw_text,
+        res.data.pins.map((v)=> {
+            images.push({
+              url: `https://hbimg.huabanimg.com/${v.file.key}_/fw/480/format/webp`,
+              title: v.raw_text,
+            });
           })
-        })
         this.setData({
           images,
           _page: ++_page

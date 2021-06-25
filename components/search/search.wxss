@@ -1,16 +1,16 @@
-.search-container {
+.container {
   margin: 30rpx 40rpx 0 40rpx;
   padding: 0;
 }
 
-.search-icon {
+.icon {
   width: 80rpx;
   height: 80rpx;
   border-radius: 50%;
   box-shadow: 0 0 1ex #ddd;
 }
 
-.search-bar {
+.bar {
   height: 3em;
   width: 100%;
   margin: 1em 0;
@@ -26,7 +26,7 @@
   width: 80%;
 }
 
-.search-cate {
+.cate-o {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -47,7 +47,7 @@
 
 .cate .content {}
 
-.search-history {
+.history {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -61,7 +61,7 @@
   background-color: #ccc;
 }
 
-.search-recommend {
+.recommend {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -69,7 +69,7 @@
   align-content: flex-start;
 }
 
-.search-discover {
+.discover {
   width: 100%;
   display: flex;
   flex-flow: row-reverse wrap-reverse;
@@ -97,16 +97,16 @@
   height: 100%;
   display: table;
   padding: 0 0 0 1ex;
+  overflow: hidden;
 }
 
 .water .right .inner {
   display: table-cell;
   vertical-align: middle;
-  height: 1.1em;
   overflow: hidden;
 }
 
-.search-result {
+.result {
   max-height: 80vh;
   overflow-y: auto;
   display: flex;
@@ -120,7 +120,7 @@
   padding: 0;
   width: 100%;
   height: 5em;
-  box-shadow: 0 0 1ex #ddd;
+  box-shadow: 0 0 5rpx #ddd;
   border-radius: 1ex;
 }
 
@@ -160,7 +160,7 @@
   overflow: hidden;
 }
 
-.no {
+.nores {
   display: table;
   text-align: center;
   margin: 0;

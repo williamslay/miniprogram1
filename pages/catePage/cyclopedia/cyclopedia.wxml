@@ -1,2 +1,21 @@
-<!--pages/catePage/cyclopedia/cyclopedia.wxml-->
-<text>pages/catePage/cyclopedia/cyclopedia.wxml</text>
+<view class='header box'>
+  <view class='inner'>
+    <view class='hlist'>
+      <view class='item'>
+        <text class='title'>百科</text>
+      </view>
+      <view class='item ctrmid'>
+        <view class='inner'>
+          <picker header-text='{{cate}}' mode='selector' range='{{cates}}' bindchange='cateSet'></picker>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='content box'>
+  <view class='inner list'>
+    <view class='inner'>
+
+    </view>
+  </view>
+</view>

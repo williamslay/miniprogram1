@@ -1,1 +1,57 @@
-/* pages/catePage/cyclopedia/cyclopedia.wxss */
+/* * {
+  margin: 0;
+  padding: 0;
+  border: none;
+} */
+
+/* 模块外框 */
+.box {
+  width: 100%;
+}
+
+.box .inner {
+  margin: 1ex 1em;
+}
+
+/* 列表 */
+.list{
+  display:flex;
+  flex-flow: column nowrap;
+}
+.list .item{
+  display:block;
+  border-bottom: 1rpx #444;
+}
+
+/* 水平列表 */
+.hlist {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.hlist .item {
+  display: block;
+}
+
+/* 双居中 */
+.ctrmid {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.ctrmid .inner {
+  display: block;
+}
+
+/****    ****    ****    ****/
+.header {
+  margin-top: 40rpx;
+}
+
+.header .title {
+  font-size: large;
+  font-weight: lighter;
+}

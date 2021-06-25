@@ -10,11 +10,14 @@
         <image src="../../images/XiaoBai.jpg" mode="heightFix"></image>
       </view>
       <view class="answerer-info flex-item">
-        <text class="answerer-name">Rebecca</text>
+        <text class="answerer-name">罗小白</text>
         <text class="answerer-des">拥有一只十岁的小黑猫！！！</text>
       </view>
-      <view class="follow flex-item">
-        <text>十 关注</text>
+      <view class="followed flex-item" wx:if="{{isFollowing}}" bindtap="Follow">
+        <text >已关注</text>
+      </view>
+      <view wx:else class="follow flex-item" bindtap="Follow">
+        <text >+ 关注</text>
       </view>
     </view>
   </view>
@@ -192,31 +195,104 @@
       </view>
     </view>
   </view>
-  <!-- <view wx:if="{{show_viewComment}}">
+  <view wx:if="{{show_viewComment}}">
    <view class="popupComment">
      <view class="inner">
        <view class="comment1">
          <View class="majorComment">
-           <image class="commentAvatar" src="..."></image>
-           <text>好呀！！！</text>
+           <view class="commentPerson">
+            <image class="commentAvatar" src="../../images/XiaoHei2.jpeg"></image>
+           <a class="majorComment-name">小黑</a>
+           </view>
+           <text class="majorCommentText">谢谢楼主的科普！！！我家的猫就是这样。学习了！！！</text>
            <view class="commentButton">
-            <image class="commentReply" src="..."></image>
-            <image class="commentApprove" src="..."></image>
+           <view class="commentReply">
+            <image  src="../../images/commentReply.png"></image>
+            <text >{{commentReplyNum1}}</text>
+           </view>
+            <view class="commentApprove" bindtap="commentApprove" data-comment="1"> 
+            <image  src="../../images/commentApproved.png"  wx:if="{{commentApproved1}}" ></image>
+            <image wx:else  src="../../images/commentApprove.png"></image>
+            <text>{{commentApproveNum1}}</text>
+            </view>
            </view>
          </View>
          <View class="minorComment">
-          <image class="commentAvatar" src="..."></image>
-           <text>好呀！！！</text>
+          <view class="commentPerson">
+            <image class="commentAvatar" src="../../images/XiaoBai.jpg"></image>
+           <a class="minorComment-name">罗小白</a>
+           </view>
+           <text class="minorCommentText">不用谢啊，大家一起学习啊!!!!</text>
            <view class="commentButton">
-            <image class="commentReply" src="..."></image>
-            <image class="commentApprove" src="..."></image>
+           <view class="commentReply">
+            <image  src="../../images/commentReply.png"></image>
+            <text >{{commentReplyNum1_1}}</text>
+           </view>
+            <view class="commentApprove" bindtap="commentApprove" data-comment="1.1"> 
+            <image  src="../../images/commentApproved.png"  wx:if="{{commentApproved1_1}}" ></image>
+            <image wx:else src="../../images/commentApprove.png"></image>
+            <text>{{commentApproveNum1_1}}</text>
+            </view>
+           </view>
+         </View>
+         <View class="minorComment">
+          <view class="commentPerson">
+            <image class="commentAvatar" src="../../images/ShanXin.jpg"></image>
+           <a class="minorComment-name">山新</a>
+           </view>
+           <text class="minorCommentText">好巧啊，我家的猫也是这样！！！</text>
+           <view class="commentButton">
+           <view class="commentReply">
+            <image  src="../../images/commentReply.png"></image>
+            <text >{{commentReplyNum1_2}}</text>
+           </view>
+            <view class="commentApprove" bindtap="commentApprove" data-comment="1.2"> 
+            <image  src="../../images/commentApproved.png"  wx:if="{{commentApproved1_2}}" ></image>
+            <image wx:else src="../../images/commentApprove.png"></image>
+            <text>{{commentApproveNum1_2}}</text>
+            </view>
            </view>
          </View>
        </view>
-       <view class="comment2"></view>
-       <view class="comment3"></view>
-       <view class="comment4"></view>
+       <view class="comment2">
+         <View class="majorComment">
+           <view class="commentPerson">
+            <image class="commentAvatar" src="../../images/ShanXin.jpg"></image>
+           <a class="majorComment-name">山新</a>
+           </view>
+           <text class="majorCommentText">感谢楼主的科普！！！楼主还能不能介绍一下更多情绪解读的部分啊，我家的主子变化无常，觉得似乎这些还不够完全猜透它的心思呢！！！</text>
+           <view class="commentButton">
+           <view class="commentReply">
+            <image  src="../../images/commentReply.png"></image>
+            <text >{{commentReplyNum2}}</text>
+           </view>
+            <view class="commentApprove" bindtap="commentApprove" data-comment="2"> 
+            <image  src="../../images/commentApproved.png"  wx:if="{{commentApproved1}}" ></image>
+            <image wx:else  src="../../images/commentApprove.png"></image>
+            <text>{{commentApproveNum2}}</text>
+            </view>
+            </view>
+         </View>
+         <View class="minorComment">
+          <view class="commentPerson">
+            <image class="commentAvatar" src="../../images/XiaoBai.jpg"></image>
+           <a class="minorComment-name">罗小白</a>
+           </view>
+           <text class="minorCommentText">可以的，等我一会加更！！！</text>
+           <view class="commentButton">
+           <view class="commentReply">
+            <image  src="../../images/commentReply.png"></image>
+            <text >{{commentReplyNum2_1}}</text>
+           </view>
+            <view class="commentApprove" bindtap="commentApprove" data-comment="2.1"> 
+            <image  src="../../images/commentApproved.png"  wx:if="{{commentApproved2_1}}" ></image>
+            <image wx:else src="../../images/commentApprove.png"></image>
+            <text>{{commentApproveNum2_1}}</text>
+            </view>
+           </view>
+         </View>
+       </view>
      </view>
    </view>
-  </view> -->
+  </view>
 </page-container>

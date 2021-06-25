@@ -1,34 +1,66 @@
-const app = getApp()
+// pages/catePage/block/bird/bird.js
 Page({
+
+  /**
+   * Page initial data
+   */
   data: {
-    cate: {
-      title: null,
-      id: null
-    },
-    subCate: [{
-      id: null,
-      title: null
-    }],
-    top: [],
-    content: []
+
   },
-  // onLoad: function (options) {
-  //   cate.id = options.cate
-  //   wx.request({
-  //     url: `${app.globalData.baseURL}/api/threads?filter[categoryId]=${cate}`,
-  //     success: (res) => {
-  //       cate.title=res.data.
-  //       var threads = res.data.data
-  //       for (var idx = 0; threads.length >= 0; ++idx) {
-  //         wx.reques({
-  //           url: `${app.globalData.baseURL}/api/threads/${threads[idx].id}`
-  //         })
-  //       }
-  //     }
-  //   })
-  // },
-  // onPullDownRefresh: function () {
-  //   this.onLoad()
-  //   wx.stopPullDownRefresh()
-  // }
+
+  /**
+   * Lifecycle function--Called when page load
+   */
+  onLoad: function (options) {
+
+  },
+
+  /**
+   * Lifecycle function--Called when page is initially rendered
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * Lifecycle function--Called when page show
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * Lifecycle function--Called when page hide
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * Lifecycle function--Called when page unload
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * Page event handler function--Called when user drop down
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * Called when page reach bottom
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * Called when user click on the top right corner to share
+   */
+  onShareAppMessage: function () {
+
+  }
 })

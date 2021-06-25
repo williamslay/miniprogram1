@@ -7,7 +7,23 @@ Page({
     show_viewComment:false,
     showMore:false,
     approved:false,
-    favored:false
+    favored:false,
+    isFollowing:false,
+    commentReplyNum1:2,
+    commentApproveNum1:666,
+    commentApproved1:false,
+    commentReplyNum1_1:0,
+    commentApproveNum1_1:1,
+    commentApproved1_1:false,
+    commentReplyNum1_2:0,
+    commentApproveNum1_2:0,
+    commentApproved1_2:false,
+    commentReplyNum2:1,
+    commentApproveNum2:555,
+    commentApproved2:false,
+    commentReplyNum2_1:0,
+    commentApproveNum2_1:1,
+    commentApproved2_1:false
   },
   onLoad: function (options) {
     id=options.id;
@@ -28,18 +44,43 @@ Page({
       showMore:true
     })
   },
-  // viewComment:function(){
-  //   this.setData({
-  //     showPage:true,
-  //     showComment:false,
-  //     show_viewComment:true,
-  //     showMore:false
-  //   })
-  // },
+  viewComment:function(){
+    this.setData({
+      showPage:true,
+      showComment:false,
+      show_viewComment:true,
+      showMore:false
+    })
+  },
   Approve:function(){
     this.setData({approved:!this.data.approved})
   },
   Favor:function(){
     this.setData({favored:!this.data.favored})
-  }
+  },
+  Follow:function(){
+    this.setData({isFollowing:!this.data.isFollowing})
+  },
+  commentApprove:function(e){
+    if(this.data.commentApproved1==false&&e.currentTarget.dataset.comment==1)
+    this.setData({commentApproveNum1:this.data.commentApproveNum1+1,commentApproved1:true});
+    else if(this.data.commentApproved1==true&&e.currentTarget.dataset.comment==1)
+    this.setData({commentApproveNum1:this.data.commentApproveNum1-1,commentApproved1:false});
+    if(this.data.commentApproved1_1==false&&e.currentTarget.dataset.comment==1.1)
+    this.setData({commentApproveNum1_1:this.data.commentApproveNum1_1+1,commentApproved1_1:true});
+    else if(this.data.commentApproved1_1==true&&e.currentTarget.dataset.comment==1.1)
+    this.setData({commentApproveNum1_1:this.data.commentApproveNum1_1-1,commentApproved1_1:false});
+    if(this.data.commentApproved1_2==false&&e.currentTarget.dataset.comment==1.2)
+    this.setData({commentApproveNum1_2:this.data.commentApproveNum1_2+1,commentApproved1_2:true});
+    else if(this.data.commentApproved1_2==true&&e.currentTarget.dataset.comment==1.2)
+    this.setData({commentApproveNum1_2:this.data.commentApproveNum1_2-1,commentApproved1_2:false});
+    if(this.data.commentApproved2==false&&e.currentTarget.dataset.comment==2)
+    this.setData({commentApproveNum2:this.data.commentApproveNum2+1,commentApproved2:true});
+    else if(this.data.commentApproved2==true&&e.currentTarget.dataset.comment==2)
+    this.setData({commentApproveNum2:this.data.commentApproveNum2-1,commentApproved2:false});
+    if(this.data.commentApproved2_1==false&&e.currentTarget.dataset.comment==2.1)
+    this.setData({commentApproveNum2_1:this.data.commentApproveNum2_1+1,commentApproved2_1:true});
+    else if(this.data.commentApproved2_1==true&&e.currentTarget.dataset.comment==2.1)
+    this.setData({commentApproveNum2_1:this.data.commentApproveNum2_1-1,commentApproved2_1:false});
+  },
 })
